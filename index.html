@@ -1,38 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags and Title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LeadGen Pro - Get unlimited leads with advanced tools to enhance your lead generation strategy. Contact us today for more details!">
-    <meta name="keywords" content="Get Our Software In Your Hands, Unlimited leads, Contact us, Business scaling">
-    <meta name="author" content="LeadGen Pro">
-    <title>LeadMe</title>
+    <title>LeadMe - Unlimited Leads for Your Business</title>
+    
+    <!-- Description and Keywords -->
+    <meta name="description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy. Contact us today for more details!">
+    <meta name="keywords" content="LeadMe Software, Unlimited leads, Contact us, Business scaling">
+    <meta name="author" content="LeadMe">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="LeadMe - Unlimited Leads for Your Business">
+    <meta property="og:description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy.">
+    <meta property="og:image" content="your-og-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LeadMe - Unlimited Leads for Your Business">
+    <meta name="twitter:description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy.">
+    <meta name="twitter:image" content="your-twitter-image.jpg">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    
     <!-- AOS CSS (for scroll animations) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-
+    
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
+    <!-- Stylesheet -->
     <style>
         /* Global Styles */
+        /* -------------------------------------------------- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body, html {
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
             font-family: 'Montserrat', sans-serif;
             background-color: #1c1c1e;
             color: white;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
         h1, h2, h3 {
             margin: 0;
@@ -41,8 +61,20 @@
         h1, h2 {
             color: #fff;
         }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style-type: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
         /* Navigation */
+        /* -------------------------------------------------- */
         .nav {
             background-color: #121212;
             padding: 20px 0;
@@ -52,23 +84,26 @@
             z-index: 1000;
         }
         .nav ul {
-            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .nav ul li {
-            display: inline;
             margin: 0 20px;
         }
         .nav ul li a {
             color: #f0a500;
-            text-decoration: none;
             font-size: 1.2rem;
             transition: color 0.3s ease;
         }
-        .nav ul li a:hover {
+        .nav ul li a:hover,
+        .nav ul li a:focus {
             color: #ff9800;
+            outline: none;
         }
 
         /* Introductory Section */
+        /* -------------------------------------------------- */
         .intro-section {
             height: 100vh;
             background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('your-background-image.jpg') center/cover no-repeat;
@@ -76,12 +111,10 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
             padding: 0 20px;
         }
         .intro-section h1 {
             font-size: 4.5rem;
-            color: #fff;
             letter-spacing: 2px;
             line-height: 1.2;
             animation: fadeInUp 1.5s ease-in-out;
@@ -106,13 +139,17 @@
             transition: all 0.3s ease;
             animation: fadeInUp 2.5s ease-in-out;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: none;
         }
-        .cta-btn:hover {
+        .cta-btn:hover,
+        .cta-btn:focus {
             background-color: #ff9800;
             transform: translateY(-3px);
+            outline: none;
         }
 
         /* UI Showcase Section */
+        /* -------------------------------------------------- */
         .ui-showcase {
             padding: 100px 0;
             background: #282828;
@@ -129,18 +166,6 @@
             color: #ddd;
             margin-bottom: 40px;
         }
-        .ui-image {
-            max-width: 90%;
-            height: auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-        .ui-image:hover {
-            transform: scale(1.05);
-        }
-
-        /* UI Background Section */
         .ui-background {
             padding: 50px;
             background-color: #333;
@@ -155,7 +180,59 @@
             border-radius: 10px;
         }
 
+        /* Comparison Section */
+        /* -------------------------------------------------- */
+        .comparison-section {
+            padding: 100px 0;
+            background: #1c1c1e;
+            color: #fff;
+            text-align: center;
+        }
+        .comparison-section h2 {
+            font-size: 3rem;
+            color: #f0a500;
+            margin-bottom: 50px;
+        }
+        .comparison-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .comparison-card {
+            background: #282828;
+            padding: 40px;
+            border-radius: 15px;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .comparison-card:hover {
+            transform: translateY(-10px);
+        }
+        .comparison-card h3 {
+            font-size: 2rem;
+            color: #f0a500;
+            margin-bottom: 20px;
+        }
+        .comparison-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .comparison-card ul li {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #ddd;
+            text-align: left;
+        }
+        .comparison-card ul li i {
+            color: #f0a500;
+            margin-right: 10px;
+        }
+
         /* Pricing Section */
+        /* -------------------------------------------------- */
         .pricing-section {
             padding: 100px 0;
             background: #202020;
@@ -186,6 +263,7 @@
         .pricing-card p {
             font-size: 1.2rem;
             margin-bottom: 30px;
+            color: #ddd;
         }
         .pricing-card .price {
             font-size: 4rem;
@@ -202,11 +280,14 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        .pricing-card button:hover {
+        .pricing-card button:hover,
+        .pricing-card button:focus {
             background-color: #ff9800;
+            outline: none;
         }
 
         /* Contact Section */
+        /* -------------------------------------------------- */
         .contact-section {
             padding: 100px 0;
             background: #121212;
@@ -256,11 +337,14 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        .contact-form button:hover {
+        .contact-form button:hover,
+        .contact-form button:focus {
             background-color: #ff9800;
+            outline: none;
         }
 
         /* Footer */
+        /* -------------------------------------------------- */
         .footer {
             padding: 50px 0;
             background-color: #121212;
@@ -269,12 +353,19 @@
         }
 
         /* Animations */
+        /* -------------------------------------------------- */
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(40px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsive Design */
+        /* -------------------------------------------------- */
+        @media (max-width: 992px) {
+            .pricing-card {
+                width: 70%;
+            }
+        }
         @media (max-width: 768px) {
             .intro-section h1 {
                 font-size: 2.5rem;
@@ -292,22 +383,29 @@
             .ui-background {
                 padding: 20px;
             }
+            .comparison-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .comparison-card {
+                width: 80%;
+            }
         }
     </style>
 </head>
 <body>
-
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" role="navigation">
         <ul>
             <li><a href="#intro">Home</a></li>
+            <li><a href="#comparison">Why LeadMe?</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Introductory Section -->
-    <section id="intro" class="intro-section">
+    <section id="intro" class="intro-section" aria-label="Introduction">
         <div>
             <h1>LeadMe</h1>
             <p>Transform your lead generation strategy with advanced tools to enhance efficiency.</p>
@@ -316,16 +414,43 @@
     </section>
 
     <!-- UI Showcase Section -->
-    <section id="ui-showcase" class="ui-showcase">
+    <section id="ui-showcase" class="ui-showcase" aria-label="UI Showcase">
         <h2>Our LeadMe Software</h2>
         <p>If you want access, shoot us an email!</p>
         <div class="ui-background">
-            <img src="Screenshot 2024-10-01 175403.png" alt="LeadMe UI" class="ui-image">
+            <img src="Screenshot 2024-10-01 175403.png" alt="Screenshot of LeadMe UI" class="ui-image">
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison-section" aria-label="Comparison">
+        <h2>Why Choose LeadMe Over Apollo?</h2>
+        <div class="comparison-container">
+            <div class="comparison-card" data-aos="fade-right" data-aos-delay="200">
+                <h3>Apollo</h3>
+                <ul>
+                    <li><i class="fas fa-times"></i> Charges per lead</li>
+                    <li><i class="fas fa-times"></i> Limited to 1,000 leads</li>
+                    <li><i class="fas fa-times"></i> Additional fees may apply</li>
+                    <li><i class="fas fa-times"></i> Complex pricing tiers</li>
+                    <li><i class="fas fa-times"></i> Potential overage charges</li>
+                </ul>
+            </div>
+            <div class="comparison-card" data-aos="fade-left" data-aos-delay="200">
+                <h3>LeadMe</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> $200/month flat rate</li>
+                    <li><i class="fas fa-check"></i> Unlimited leads</li>
+                    <li><i class="fas fa-check"></i> No extra fees</li>
+                    <li><i class="fas fa-check"></i> Simple and transparent pricing</li>
+                    <li><i class="fas fa-check"></i> Scalable solutions for your business</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section" data-aos="fade-up">
+    <section id="pricing" class="pricing-section" aria-label="Pricing">
         <h2>Our Pricing Plan</h2>
         <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
             <h3>Unlimited Leads Plan</h3>
@@ -336,15 +461,18 @@
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section" aria-label="Contact Us">
         <h2>Contact Us</h2>
         <div class="contact-form" data-aos="fade-up">
             <!-- Formspree Form Integration -->
             <form action="https://formspree.io/f/mdknqvlk" method="POST">
-                <label for="email">Your email:</label>
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" id="name" required>
+                
+                <label for="email">Your Email:</label>
                 <input type="email" name="email" id="email" required>
                 
-                <label for="message">Your message:</label>
+                <label for="message">Your Message:</label>
                 <textarea name="message" id="message" rows="5" required></textarea>
                 
                 <button type="submit">Send</button>
@@ -352,15 +480,21 @@
         </div>
     </section>
 
-
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <p>&copy; 2024 LeadMe. All rights reserved.</p>
+    </footer>
 
     <!-- AOS Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         // Initialize AOS (Animate on Scroll)
-        AOS.init({
-            duration: 1000,
-            easing: 'ease-in-out',
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true,
+            });
         });
 
         // Scroll to specific section
