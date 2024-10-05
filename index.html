@@ -39,7 +39,6 @@
     <!-- Stylesheet -->
     <style>
         /* Global Styles */
-        /* -------------------------------------------------- */
         * {
             margin: 0;
             padding: 0;
@@ -74,7 +73,6 @@
         }
 
         /* Navigation */
-        /* -------------------------------------------------- */
         .nav {
             background-color: #121212;
             padding: 20px 0;
@@ -103,7 +101,6 @@
         }
 
         /* Introductory Section */
-        /* -------------------------------------------------- */
         .intro-section {
             height: 100vh;
             background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('your-background-image.jpg') center/cover no-repeat;
@@ -117,14 +114,12 @@
             font-size: 4.5rem;
             letter-spacing: 2px;
             line-height: 1.2;
-            animation: fadeInUp 1.5s ease-in-out;
         }
         .intro-section p {
             font-size: 1.5rem;
             margin-top: 20px;
             max-width: 600px;
             color: #ddd;
-            animation: fadeInUp 2s ease-in-out;
         }
         .cta-btn {
             margin-top: 40px;
@@ -137,7 +132,6 @@
             font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            animation: fadeInUp 2.5s ease-in-out;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             border: none;
         }
@@ -148,8 +142,27 @@
             outline: none;
         }
 
+        /* About Us Section */
+        .about-section {
+            padding: 100px 20px;
+            background: #1c1c1e;
+            color: #fff;
+            text-align: center;
+        }
+        .about-section h2 {
+            font-size: 3rem;
+            color: #f0a500;
+            margin-bottom: 30px;
+        }
+        .about-section p {
+            font-size: 1.2rem;
+            color: #ddd;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+
         /* UI Showcase Section */
-        /* -------------------------------------------------- */
         .ui-showcase {
             padding: 100px 0;
             background: #282828;
@@ -181,7 +194,6 @@
         }
 
         /* Comparison Section */
-        /* -------------------------------------------------- */
         .comparison-section {
             padding: 100px 0;
             background: #1c1c1e;
@@ -232,7 +244,6 @@
         }
 
         /* Pricing Section */
-        /* -------------------------------------------------- */
         .pricing-section {
             padding: 100px 0;
             background: #202020;
@@ -287,7 +298,6 @@
         }
 
         /* Contact Section */
-        /* -------------------------------------------------- */
         .contact-section {
             padding: 100px 0;
             background: #121212;
@@ -344,7 +354,6 @@
         }
 
         /* Footer */
-        /* -------------------------------------------------- */
         .footer {
             padding: 50px 0;
             background-color: #121212;
@@ -352,15 +361,7 @@
             color: #fff;
         }
 
-        /* Animations */
-        /* -------------------------------------------------- */
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(40px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
         /* Responsive Design */
-        /* -------------------------------------------------- */
         @media (max-width: 992px) {
             .pricing-card {
                 width: 70%;
@@ -398,6 +399,7 @@
     <nav class="nav" role="navigation">
         <ul>
             <li><a href="#intro">Home</a></li>
+            <li><a href="#about">About Us</a></li>
             <li><a href="#comparison">Why LeadMe?</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -406,25 +408,32 @@
 
     <!-- Introductory Section -->
     <section id="intro" class="intro-section" aria-label="Introduction">
-        <div>
+        <div data-aos="fade-in">
             <h1>LeadMe</h1>
-            <p>Transform your lead generation strategy with advanced tools to enhance efficiency.</p>
-            <button class="cta-btn" onclick="scrollToSection('#pricing')">Explore Pricing</button>
+            <p>Transform your lead generation strategy with advanced tools to enhance efficiency. Contact us today for a completely free demo!</p>
+            <button class="cta-btn" onclick="scrollToSection('#contact')">Get a Free Demo</button>
         </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section" aria-label="About LeadMe">
+        <h2 data-aos="fade-up">About LeadMe</h2>
+        <p data-aos="fade-up" data-aos-delay="100">LeadMe is a cutting-edge lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly.</p>
+        <p data-aos="fade-up" data-aos-delay="200">At LeadMe, we specialize in providing unlimited leads for a flat monthly rate. Our mission is to simplify the lead generation process, making it more accessible and cost-effective for businesses of all sizes. We believe in transparent pricing, exceptional customer service, and delivering real results that help your business grow.</p>
     </section>
 
     <!-- UI Showcase Section -->
     <section id="ui-showcase" class="ui-showcase" aria-label="UI Showcase">
-        <h2>Our LeadMe Software</h2>
-        <p>If you want access, shoot us an email!</p>
-        <div class="ui-background">
+        <h2 data-aos="fade-up">Our LeadMe Software</h2>
+        <p data-aos="fade-up" data-aos-delay="100">If you want access, shoot us an email!</p>
+        <div class="ui-background" data-aos="zoom-in" data-aos-delay="200">
             <img src="Screenshot 2024-10-01 175403.png" alt="Screenshot of LeadMe UI" class="ui-image">
         </div>
     </section>
 
     <!-- Comparison Section -->
     <section id="comparison" class="comparison-section" aria-label="Comparison">
-        <h2>Why Choose LeadMe Over Apollo?</h2>
+        <h2 data-aos="fade-up">Why Choose LeadMe Over Apollo?</h2>
         <div class="comparison-container">
             <div class="comparison-card" data-aos="fade-right" data-aos-delay="200">
                 <h3>Apollo</h3>
@@ -436,7 +445,7 @@
                     <li><i class="fas fa-times"></i> Potential overage charges</li>
                 </ul>
             </div>
-            <div class="comparison-card" data-aos="fade-left" data-aos-delay="200">
+            <div class="comparison-card" data-aos="fade-left" data-aos-delay="400">
                 <h3>LeadMe</h3>
                 <ul>
                     <li><i class="fas fa-check"></i> $200/month flat rate</li>
@@ -451,19 +460,19 @@
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing-section" aria-label="Pricing">
-        <h2>Our Pricing Plan</h2>
+        <h2 data-aos="fade-up">Our Pricing Plan</h2>
         <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
             <h3>Unlimited Leads Plan</h3>
             <p>Get infinite leads every month with no extra fees. Scale your business effortlessly!</p>
             <div class="price">$200/month</div>
-            <button onclick="scrollToSection('#contact')">Interested? Click here</button>
+            <button onclick="scrollToSection('#contact')">Request a Free Demo</button>
         </div>
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact" class="contact-section" aria-label="Order From Us">
-        <h2>Contact Us</h2>
-        <div class="contact-form" data-aos="fade-up">
+    <section id="contact" class="contact-section" aria-label="Contact Us">
+        <h2 data-aos="fade-up">Contact Us for a Free Demo</h2>
+        <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
             <!-- Formspree Form Integration -->
             <form action="https://formspree.io/f/mdknqvlk" method="POST">
                 <label for="name">Your Name:</label>
@@ -474,6 +483,11 @@
                 
                 <label for="message">Your Message:</label>
                 <textarea name="message" id="message" rows="5" required></textarea>
+
+                <label>
+                    <input type="checkbox" name="demo_request" value="yes">
+                    I'd like to request a free demo
+                </label>
                 
                 <button type="submit">Send</button>
             </form>
@@ -481,8 +495,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <p>&copy; 2024 LeadMe. All rights reserved.</p>
+    <footer class="footer" role="contentinfo" data-aos="fade-in" data-aos-delay="200">
+        <p>&copy; 2024 LeadMe. All rights reserved. <br> Contact us today for a <strong>completely free demo</strong>!</p>
     </footer>
 
     <!-- AOS Animation Library -->
