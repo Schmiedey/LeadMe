@@ -28,10 +28,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQd1M2czE+8lC/7hN0jtNjbz+Yqw8PA3z3aO2ghe+05t3ew3KZK4qtcRl3PjMK3RHjMduVzTnK3g4Cg6w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- AOS CSS (for scroll animations) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-pGk6IelUqTpDjyhCc4+Y70NsrPUqFjE6gASmMocJkZrLXJkhJHHjEuvmT57qHScHhLmD8V7h9GwjRvLk8FJ/0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -93,11 +93,27 @@
             color: #f0a500;
             font-size: 1.2rem;
             transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav ul li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ff9800;
+            transition: width .3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
         }
         .nav ul li a:hover,
         .nav ul li a:focus {
             color: #ff9800;
             outline: none;
+        }
+        .nav ul li a:hover::after,
+        .nav ul li a:focus::after {
+            width: 100%;
         }
 
         /* Introductory Section */
@@ -237,11 +253,17 @@
             margin-bottom: 15px;
             color: #ddd;
             text-align: left;
+            display: flex;
+            align-items: center;
         }
         .comparison-card ul li i {
             color: #f0a500;
             margin-right: 10px;
+            min-width: 20px;
         }
+
+        /* New Outscraper Comparison Section */
+        /* This section uses the same styles as the existing comparison section */
 
         /* Pricing Section */
         .pricing-section {
@@ -322,7 +344,8 @@
             margin-top: 10px;
             display: block;
         }
-        .contact-form input, .contact-form textarea {
+        .contact-form input, 
+        .contact-form textarea {
             width: 100%;
             padding: 15px;
             margin: 15px 0;
@@ -332,9 +355,19 @@
             border-radius: 10px;
             font-size: 1rem;
         }
-        .contact-form input:focus, .contact-form textarea:focus {
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
             outline: none;
             background: #555;
+        }
+        .contact-form .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .contact-form .checkbox-container input {
+            width: auto;
+            margin-right: 10px;
         }
         .contact-form button {
             padding: 15px;
@@ -346,6 +379,7 @@
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
+            width: 100%;
         }
         .contact-form button:hover,
         .contact-form button:focus {
@@ -359,6 +393,17 @@
             background-color: #121212;
             text-align: center;
             color: #fff;
+        }
+        .footer a {
+            color: #f0a500;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover,
+        .footer a:focus {
+            color: #ff9800;
+            outline: none;
         }
 
         /* Responsive Design */
@@ -391,116 +436,169 @@
             .comparison-card {
                 width: 80%;
             }
+            .nav ul {
+                flex-direction: column;
+            }
+            .nav ul li {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav" role="navigation">
+    <nav class="nav" role="navigation" aria-label="Main Navigation">
         <ul>
-            <li><a href="#intro">Home</a></li>
+            <li><a href="#intro" aria-current="page">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#comparison">Why LeadMe?</a></li>
+            <li><a href="#outscraper-comparison">LeadMe vs Outscraper</a></li> <!-- New Navigation Link -->
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Introductory Section -->
-    <section id="intro" class="intro-section" aria-label="Introduction">
-        <div data-aos="fade-in">
-            <h1>LeadMe</h1>
-            <p>Transform your lead generation strategy with advanced tools to enhance efficiency. Contact us today for a completely free demo!</p>
-            <button class="cta-btn" onclick="scrollToSection('#contact')">Get a Free Demo</button>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="about-section" aria-label="About LeadMe">
-        <h2 data-aos="fade-up">About LeadMe</h2>
-        <p data-aos="fade-up" data-aos-delay="100">LeadMe is a cutting-edge lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly.</p>
-        <p data-aos="fade-up" data-aos-delay="200">At LeadMe, we specialize in providing unlimited leads for a flat monthly rate. Our mission is to simplify the lead generation process, making it more accessible and cost-effective for businesses of all sizes. We believe in transparent pricing, exceptional customer service, and delivering real results that help your business grow.</p>
-    </section>
-
-    <!-- UI Showcase Section -->
-    <section id="ui-showcase" class="ui-showcase" aria-label="UI Showcase">
-        <h2 data-aos="fade-up">Our LeadMe Software</h2>
-        <p data-aos="fade-up" data-aos-delay="100">If you want access, shoot us an email!</p>
-        <div class="ui-background" data-aos="zoom-in" data-aos-delay="200">
-            <img src="Screenshot 2024-10-01 175403.png" alt="Screenshot of LeadMe UI" class="ui-image">
-        </div>
-    </section>
-
-    <!-- Comparison Section -->
-    <section id="comparison" class="comparison-section" aria-label="Comparison">
-        <h2 data-aos="fade-up">Why Choose LeadMe Over Apollo?</h2>
-        <div class="comparison-container">
-            <div class="comparison-card" data-aos="fade-right" data-aos-delay="200">
-                <h3>Apollo</h3>
-                <ul>
-                    <li><i class="fas fa-times"></i> Charges per lead</li>
-                    <li><i class="fas fa-times"></i> Limited to 1,000 leads</li>
-                    <li><i class="fas fa-times"></i> Additional fees may apply</li>
-                    <li><i class="fas fa-times"></i> Complex pricing tiers</li>
-                    <li><i class="fas fa-times"></i> Potential overage charges</li>
-                </ul>
+    <main>
+        <!-- Introductory Section -->
+        <section id="intro" class="intro-section" aria-label="Introduction">
+            <div data-aos="fade-in">
+                <h1>LeadMe</h1>
+                <p>Transform your lead generation strategy with advanced tools to enhance efficiency. Contact us today for a completely free demo!</p>
+                <button class="cta-btn" onclick="scrollToSection('#contact')">Get a Free Demo</button>
             </div>
-            <div class="comparison-card" data-aos="fade-left" data-aos-delay="400">
-                <h3>LeadMe</h3>
-                <ul>
-                    <li><i class="fas fa-check"></i> $200/month flat rate</li>
-                    <li><i class="fas fa-check"></i> Unlimited leads</li>
-                    <li><i class="fas fa-check"></i> No extra fees</li>
-                    <li><i class="fas fa-check"></i> Simple and transparent pricing</li>
-                    <li><i class="fas fa-check"></i> Scalable solutions for your business</li>
-                </ul>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about-section" aria-label="About LeadMe">
+            <h2 data-aos="fade-up">About LeadMe</h2>
+            <p data-aos="fade-up" data-aos-delay="100">LeadMe is a cutting-edge lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly.</p>
+            <p data-aos="fade-up" data-aos-delay="200">At LeadMe, we specialize in providing unlimited leads for a flat monthly rate. Our mission is to simplify the lead generation process, making it more accessible and cost-effective for businesses of all sizes. We believe in transparent pricing, exceptional customer service, and delivering real results that help your business grow.</p>
+        </section>
+
+        <!-- UI Showcase Section -->
+        <section id="ui-showcase" class="ui-showcase" aria-label="UI Showcase">
+            <h2 data-aos="fade-up">Our LeadMe Software</h2>
+            <p data-aos="fade-up" data-aos-delay="100">If you want access, shoot us an email!</p>
+            <div class="ui-background" data-aos="zoom-in" data-aos-delay="200">
+                <img src="Screenshot 2024-10-01 175403.png" alt="Screenshot of LeadMe User Interface" class="ui-image">
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section" aria-label="Pricing">
-        <h2 data-aos="fade-up">Our Pricing Plan</h2>
-        <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
-            <h3>Unlimited Leads Plan</h3>
-            <p>Get infinite leads every month with no extra fees. Scale your business effortlessly!</p>
-            <div class="price">$200/month</div>
-            <button onclick="scrollToSection('#contact')">Request a Free Demo</button>
-        </div>
-    </section>
+        <!-- Existing Comparison Section -->
+        <section id="comparison" class="comparison-section" aria-label="Comparison">
+            <h2 data-aos="fade-up">Why Choose LeadMe Over Apollo?</h2>
+            <div class="comparison-container">
+                <div class="comparison-card" data-aos="fade-right" data-aos-delay="200">
+                    <h3>Apollo</h3>
+                    <ul>
+                        <li><i class="fas fa-times" aria-hidden="true"></i> Charges per lead</li>
+                        <li><i class="fas fa-times" aria-hidden="true"></i> Limited to 1,000 leads</li>
+                        <li><i class="fas fa-times" aria-hidden="true"></i> Additional fees may apply</li>
+                        <li><i class="fas fa-times" aria-hidden="true"></i> Complex pricing tiers</li>
+                        <li><i class="fas fa-times" aria-hidden="true"></i> Potential overage charges</li>
+                    </ul>
+                </div>
+                <div class="comparison-card" data-aos="fade-left" data-aos-delay="400">
+                    <h3>LeadMe</h3>
+                    <ul>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> $200/month flat rate</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Unlimited leads</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> No extra fees</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Simple and transparent pricing</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Scalable solutions for your business</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <!-- Contact Us Section -->
-    <section id="contact" class="contact-section" aria-label="Contact Us">
-        <h2 data-aos="fade-up">Contact Us for a Free Demo</h2>
-        <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
-            <!-- Formspree Form Integration -->
-            <form action="https://formspree.io/f/mdknqvlk" method="POST">
-                <label for="name">Your Name:</label>
-                <input type="text" name="name" id="name" required>
-                
-                <label for="email">Your Email:</label>
-                <input type="email" name="email" id="email" required>
-                
-                <label for="message">Your Message:</label>
-                <textarea name="message" id="message" rows="5" required></textarea>
+        <!-- New Outscraper Comparison Section -->
+        <section id="outscraper-comparison" class="comparison-section" aria-label="Outscraper Comparison">
+            <h2 data-aos="fade-up">Why Choose LeadMe Over Outscraper?</h2>
+            <div class="comparison-container">
+                <div class="comparison-card" data-aos="fade-right" data-aos-delay="200">
+                    <h3>Outscraper</h3>
+                    <ul>
+                        <li><i class="fas fa-times" aria-hidden="true"></i> $1,200 for 1 million exports</li>
+                        <li><i class="fas fa-times" aria-hidden="true"></i> Limited export capacity</li>
+                        <li><i class="fas fa-times" aria-hidden="true"></i> High one-time cost</li>
+                        <li><i class="fas fa-times" aria-hidden="true"></i> Not scalable for growing businesses</li>
+                        <li><i class="fas fa-times" aria-hidden="true"></i> Additional fees for extra services</li>
+                    </ul>
+                </div>
+                <div class="comparison-card" data-aos="fade-left" data-aos-delay="400">
+                    <h3>LeadMe</h3>
+                    <ul>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> $200/month for infinite exports</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Unlimited export capacity</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Affordable ongoing pricing</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Scalable solutions for business growth</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> No hidden or additional fees</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-                <label>
-                    <input type="checkbox" name="demo_request" value="yes">
-                    I'd like to request a free demo
-                </label>
-                
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section" aria-label="Pricing">
+            <h2 data-aos="fade-up">Our Pricing Plan</h2>
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>Unlimited Leads Plan</h3>
+                <p>Get infinite leads every month with no extra fees. Scale your business effortlessly!</p>
+                <div class="price">$200/month</div>
+                <button onclick="scrollToSection('#contact')">Request a Free Demo</button>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="contact-section" aria-label="Contact Us">
+            <h2 data-aos="fade-up">Contact Us for a Free Demo</h2>
+            <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                <!-- Formspree Form Integration -->
+                <form action="https://formspree.io/f/mdknqvlk" method="POST" aria-label="Contact Form">
+                    <label for="name">Your Name:</label>
+                    <input type="text" name="name" id="name" required aria-required="true" placeholder="Enter your full name">
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" name="email" id="email" required aria-required="true" placeholder="Enter your email address">
+
+                    <label for="phone">Your Phone Number:</label>
+                    <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="Enter your phone number (optional)">
+
+                    <label for="company">Your Company:</label>
+                    <input type="text" name="company" id="company" placeholder="Enter your company name (optional)">
+
+                    <label for="message">Your Message:</label>
+                    <textarea name="message" id="message" rows="5" required aria-required="true" placeholder="Enter your message"></textarea>
+
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="demo_request" id="demo_request" value="yes">
+                        <label for="demo_request">I'd like to request a free demo</label>
+                    </div>
+
+                    <!-- Google reCAPTCHA -->
+                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo" data-aos="fade-in" data-aos-delay="200">
         <p>&copy; 2024 LeadMe. All rights reserved. <br> Contact us today for a <strong>completely free demo</strong>!</p>
+        <div class="social-links" aria-label="Social Media Links">
+            <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/yourpage" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/company/yourpage" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/yourpage" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
 
     <!-- AOS Animation Library -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-6Oz4CA2ufqfjYxrHpjA5xBbCjN8T0j2PPF0kN/6GMc4tuW58kRI6kGJmmBWSfnkDr+HjC5n07ErNn+N4Psn5Ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Google reCAPTCHA Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         // Initialize AOS (Animate on Scroll)
         document.addEventListener('DOMContentLoaded', function() {
@@ -515,6 +613,27 @@
         function scrollToSection(section) {
             document.querySelector(section).scrollIntoView({ behavior: 'smooth' });
         }
+
+        // Optional: Highlight active navigation link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 80;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
