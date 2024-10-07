@@ -4,25 +4,28 @@
     <!-- Meta Tags and Title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeadMe - Unlimited Leads for Your Business</title>
+    <title>Don't Break the Bank Paying for Leads, Choose LeadMe</title>
     
     <!-- Description and Keywords -->
-    <meta name="description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy. Contact us today for more details!">
-    <meta name="keywords" content="LeadMe Software, Unlimited leads, Contact us, Business scaling">
+    <meta name="description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy without breaking the bank. Contact us today for more details!">
+    <meta name="keywords" content="LeadMe Software, Unlimited leads, Lead generation, Affordable lead generation, Business scaling, Lead generation software">
     <meta name="author" content="LeadMe">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="LeadMe - Unlimited Leads for Your Business">
-    <meta property="og:description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy.">
+    <meta property="og:title" content="Don't Break the Bank Paying for Leads, Choose LeadMe">
+    <meta property="og:description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy without breaking the bank.">
     <meta property="og:image" content="your-og-image.jpg">
     <meta property="og:url" content="https://yourwebsite.com">
     <meta property="og:type" content="website">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="LeadMe - Unlimited Leads for Your Business">
-    <meta name="twitter:description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy.">
+    <meta name="twitter:title" content="Don't Break the Bank Paying for Leads, Choose LeadMe">
+    <meta name="twitter:description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy without breaking the bank.">
     <meta name="twitter:image" content="your-twitter-image.jpg">
+    
+    <!-- Canonical URL for SEO -->
+    <link rel="canonical" href="https://yourwebsite.com" />
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
@@ -39,7 +42,7 @@
     <!-- Stylesheet -->
     <style>
         /* Global Styles */
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -50,26 +53,37 @@
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #1c1c1e;
-            color: white;
+            color: #ffffff;
             overflow-x: hidden;
+            line-height: 1.6;
         }
-        h1, h2, h3 {
-            margin: 0;
-            padding: 0;
-        }
-        h1, h2 {
-            color: #fff;
+        h1, h2, h3, h4, h5, h6 {
+            color: #ffffff;
+            margin-bottom: 1rem;
         }
         a {
             text-decoration: none;
             color: inherit;
+            transition: color 0.3s ease;
+        }
+        a:hover, a:focus {
+            color: #ff9800;
+            outline: none;
         }
         ul {
-            list-style-type: none;
+            list-style: none;
         }
         img {
             max-width: 100%;
             height: auto;
+            display: block;
+        }
+        /* Button Focus Outline for Accessibility */
+        .cta-btn:focus,
+        .pricing-card button:focus,
+        .contact-form button:focus {
+            outline: 2px dashed #ff9800;
+            outline-offset: 4px;
         }
 
         /* Navigation */
@@ -80,20 +94,22 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .nav ul {
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
         }
         .nav ul li {
-            margin: 0 20px;
+            margin: 0 15px;
         }
         .nav ul li a {
             color: #f0a500;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
+            font-size: 1.1rem;
             position: relative;
+            padding: 5px 0;
         }
         .nav ul li a::after {
             content: '';
@@ -103,13 +119,8 @@
             background: #ff9800;
             transition: width .3s;
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
-        }
-        .nav ul li a:hover,
-        .nav ul li a:focus {
-            color: #ff9800;
-            outline: none;
         }
         .nav ul li a:hover::after,
         .nav ul li a:focus::after {
@@ -126,298 +137,341 @@
             text-align: center;
             padding: 0 20px;
         }
+        .intro-content {
+            max-width: 800px;
+        }
         .intro-section h1 {
-            font-size: 4.5rem;
+            font-size: 4rem;
             letter-spacing: 2px;
-            line-height: 1.2;
+            margin-bottom: 20px;
         }
         .intro-section p {
-            font-size: 1.5rem;
-            margin-top: 20px;
-            max-width: 600px;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
             color: #ddd;
         }
         .cta-btn {
-            margin-top: 40px;
             padding: 15px 60px;
             border-radius: 50px;
             background-color: #f0a500;
             color: #000;
             text-transform: uppercase;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             border: none;
         }
         .cta-btn:hover,
         .cta-btn:focus {
             background-color: #ff9800;
             transform: translateY(-3px);
-            outline: none;
         }
 
         /* About Us Section */
         .about-section {
-            padding: 100px 20px;
+            padding: 80px 20px;
             background: #1c1c1e;
             color: #fff;
             text-align: center;
         }
         .about-section h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #f0a500;
             margin-bottom: 30px;
         }
         .about-section p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #ddd;
             max-width: 800px;
-            margin: 20px auto;
-            line-height: 1.6;
+            margin: 0 auto 20px auto;
+            line-height: 1.8;
         }
 
         /* UI Showcase Section */
         .ui-showcase {
-            padding: 100px 0;
+            padding: 80px 20px;
             background: #282828;
             color: #fff;
             text-align: center;
         }
         .ui-showcase h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #f0a500;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         .ui-showcase p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: #ddd;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         .ui-background {
-            padding: 50px;
+            padding: 30px;
             background-color: #333;
             border-radius: 15px;
-            max-width: 800px; /* Reduced from 1200px to 800px */
+            max-width: 800px;
             margin: 0 auto;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .ui-background:hover {
+            transform: scale(1.02);
         }
         .ui-background img {
             width: 100%;
             height: auto;
             border-radius: 10px;
-            max-width: 600px; /* Set maximum width for the image */
+            max-width: 800px; /* Increased from 700px to 800px */
+            transition: opacity 0.3s ease;
+        }
+        .ui-background img:hover {
+            opacity: 0.9;
         }
         .image-caption {
             margin-top: 10px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #ddd;
         }
 
         /* Comparison Section */
         .comparison-section {
-            padding: 100px 0;
+            padding: 80px 20px;
             background: #1c1c1e;
             color: #fff;
             text-align: center;
         }
         .comparison-section h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #f0a500;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         .comparison-container {
             display: flex;
             justify-content: center;
             align-items: flex-start;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 30px;
         }
         .comparison-card {
             background: #282828;
-            padding: 40px;
+            padding: 30px 20px;
             border-radius: 15px;
-            width: 350px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
+            width: 320px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .comparison-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
         }
         .comparison-card h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #f0a500;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .comparison-card ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
         }
         .comparison-card ul li {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            font-size: 1rem;
+            margin-bottom: 12px;
             color: #ddd;
-            text-align: left;
             display: flex;
             align-items: center;
         }
         .comparison-card ul li i {
             color: #f0a500;
-            margin-right: 10px;
+            margin-right: 8px;
             min-width: 20px;
         }
 
         /* Pricing Section */
         .pricing-section {
-            padding: 100px 0;
+            padding: 80px 20px;
             background: #202020;
             color: #fff;
             text-align: center;
         }
         .pricing-section h2 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             color: #f0a500;
             margin-bottom: 30px;
         }
         .pricing-card {
             background: #333;
-            padding: 40px;
+            padding: 30px 20px;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            width: 50%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            width: 400px;
             margin: 0 auto;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .pricing-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
         }
         .pricing-card h3 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 15px;
         }
         .pricing-card p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 1rem;
+            margin-bottom: 25px;
             color: #ddd;
         }
         .pricing-card .price {
-            font-size: 4rem;
+            font-size: 2.5rem;
             color: #f0a500;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         .pricing-card button {
-            padding: 15px 40px;
+            padding: 12px 35px;
             background-color: #f0a500;
             border: none;
             border-radius: 10px;
             color: #000;
-            font-size: 1.2rem;
+            font-size: 1rem;
+            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
         }
         .pricing-card button:hover,
         .pricing-card button:focus {
             background-color: #ff9800;
-            outline: none;
+            transform: translateY(-2px);
         }
 
         /* Contact Section */
         .contact-section {
-            padding: 100px 0;
+            padding: 80px 20px;
             background: #121212;
             text-align: center;
         }
         .contact-section h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #f0a500;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
             background: #333;
-            padding: 40px;
+            padding: 30px 25px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .contact-form:hover {
+            transform: translateY(-5px);
         }
         .contact-form label {
             color: #fff;
             font-size: 1rem;
             margin-top: 10px;
             display: block;
+            text-align: left;
         }
         .contact-form input, 
         .contact-form textarea {
             width: 100%;
-            padding: 15px;
-            margin: 15px 0;
+            padding: 12px 15px;
+            margin: 10px 0 20px 0;
             background: #444;
             color: #fff;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #bbb;
         }
         .contact-form input:focus, 
         .contact-form textarea:focus {
-            outline: none;
             background: #555;
+            outline: none;
         }
-        .contact-form .checkbox-container {
+        .checkbox-container {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
         }
-        .contact-form .checkbox-container input {
+        .checkbox-container input {
             width: auto;
             margin-right: 10px;
         }
         .contact-form button {
-            padding: 15px;
+            padding: 12px;
             background-color: #f0a500;
             color: #000;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             width: 100%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
         .contact-form button:hover,
         .contact-form button:focus {
             background-color: #ff9800;
-            outline: none;
+            transform: translateY(-2px);
         }
 
         /* Footer */
         .footer {
-            padding: 50px 0;
+            padding: 40px 20px;
             background-color: #121212;
             text-align: center;
             color: #fff;
         }
-        .footer a {
+        .footer p {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .social-links a {
             color: #f0a500;
             margin: 0 10px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             transition: color 0.3s ease;
         }
-        .footer a:hover,
-        .footer a:focus {
+        .social-links a:hover,
+        .social-links a:focus {
             color: #ff9800;
-            outline: none;
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .comparison-container {
+                gap: 20px;
+            }
+            .pricing-card {
+                width: 350px;
+            }
+        }
         @media (max-width: 992px) {
             .pricing-card {
                 width: 70%;
+            }
+            .nav ul {
+                flex-direction: column;
+            }
+            .nav ul li {
+                margin: 10px 0;
             }
         }
         @media (max-width: 768px) {
             .intro-section h1 {
                 font-size: 2.5rem;
+            }
+            .intro-section p {
+                font-size: 1.1rem;
             }
             .cta-btn {
                 font-size: 1rem;
@@ -427,77 +481,96 @@
                 width: 80%;
             }
             .contact-form {
-                padding: 30px;
+                padding: 25px 20px;
             }
             .ui-background {
                 padding: 20px;
-                max-width: 600px; /* Adjusted for smaller screens */
+                max-width: 600px;
             }
             .comparison-container {
                 flex-direction: column;
                 align-items: center;
             }
             .comparison-card {
-                width: 80%;
+                width: 90%;
             }
-            .nav ul {
-                flex-direction: column;
+            .ui-showcase h2,
+            .about-section h2,
+            .intro-section h1,
+            .pricing-section h2,
+            .contact-section h2,
+            .comparison-section h2 {
+                font-size: 2rem;
             }
-            .nav ul li {
-                margin: 10px 0;
+        }
+        @media (max-width: 480px) {
+            .nav ul li a {
+                font-size: 1rem;
             }
-            .ui-background img {
-                max-width: 100%; /* Ensures image doesn't exceed container on small screens */
+            .intro-section h1 {
+                font-size: 2rem;
             }
-            .image-caption {
+            .intro-section p {
+                font-size: 1rem;
+            }
+            .cta-btn {
                 font-size: 0.9rem;
+                padding: 10px 35px;
+            }
+            .pricing-card {
+                width: 90%;
+            }
+            .comparison-card {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav" role="navigation" aria-label="Main Navigation">
-        <ul>
-            <li><a href="#intro" aria-current="page">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#comparison">Why LeadMe?</a></li>
-            <li><a href="#outscraper-comparison">LeadMe vs Outscraper</a></li> <!-- New Navigation Link -->
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="nav" role="navigation" aria-label="Main Navigation">
+            <ul>
+                <li><a href="#intro" aria-current="page">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#comparison">Why LeadMe?</a></li>
+                <li><a href="#outscraper-comparison">LeadMe vs Outscraper</a></li> <!-- New Navigation Link -->
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <!-- Introductory Section -->
-        <section id="intro" class="intro-section" aria-label="Introduction">
-            <div data-aos="fade-in">
-                <h1>LeadMe</h1>
-                <p>Transform your lead generation strategy with advanced tools to enhance efficiency. Contact us today for a completely free demo!</p>
-                <button class="cta-btn" onclick="scrollToSection('#contact')">Get a Free Demo</button>
+        <section id="intro" class="intro-section" aria-labelledby="intro-heading">
+            <div class="intro-content" data-aos="fade-in">
+                <h1 id="intro-heading">Don't Break the Bank Paying for Leads, Choose LeadMe</h1>
+                <p>Transform your lead generation strategy with advanced tools to enhance efficiency without breaking the bank. Contact us today for a completely free demo!</p>
+                <button class="cta-btn" onclick="scrollToSection('#contact')" aria-label="Get a Free Demo">Get a Free Demo</button>
             </div>
         </section>
 
         <!-- About Us Section -->
-        <section id="about" class="about-section" aria-label="About LeadMe">
-            <h2 data-aos="fade-up">About LeadMe</h2>
-            <p data-aos="fade-up" data-aos-delay="100">LeadMe is a cutting-edge lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly.</p>
+        <section id="about" class="about-section" aria-labelledby="about-heading">
+            <h2 id="about-heading" data-aos="fade-up">About LeadMe</h2>
+            <p data-aos="fade-up" data-aos-delay="100">LeadMe is a cutting-edge lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly without breaking the bank.</p>
             <p data-aos="fade-up" data-aos-delay="200">At LeadMe, we specialize in providing unlimited leads for a flat monthly rate. Our mission is to simplify the lead generation process, making it more accessible and cost-effective for businesses of all sizes. We believe in transparent pricing, exceptional customer service, and delivering real results that help your business grow.</p>
         </section>
 
         <!-- UI Showcase Section -->
-        <section id="ui-showcase" class="ui-showcase" aria-label="UI Showcase">
-            <h2 data-aos="fade-up">Our LeadMe Software</h2>
-            <p data-aos="fade-up" data-aos-delay="100">If you want access, shoot us an email!</p>
+        <section id="ui-showcase" class="ui-showcase" aria-labelledby="ui-showcase-heading">
+            <h2 id="ui-showcase-heading" data-aos="fade-up">Our LeadMe Software</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Experience top-tier lead generation tools without breaking the bank.</p>
             <div class="ui-background" data-aos="zoom-in" data-aos-delay="200">
-                <img src="Screenshot 2024-10-06 194326.png" alt="Screenshot of LeadMe User Interface" class="ui-image">
-                <p class="image-caption">Dashboard view showcasing LeadMe's powerful lead generation tools and analytics.</p> <!-- Added Caption -->
+                <img src="DALL·E 2024-10-06 20.37.40 - A modern logo for 'LeadMe', a lead generation software. The design includes the word 'LeadMe' in a sleek, modern font, integrated with a stylized funn.webp" alt="Screenshot of LeadMe User Interface" class="ui-image">
+
             </div>
         </section>
 
-        <!-- Existing Comparison Section -->
-        <section id="comparison" class="comparison-section" aria-label="Comparison">
-            <h2 data-aos="fade-up">Why Choose LeadMe Over Apollo?</h2>
+        <!-- Comparison Section -->
+        <section id="comparison" class="comparison-section" aria-labelledby="comparison-heading">
+            <h2 id="comparison-heading" data-aos="fade-up">Why Choose LeadMe Over Apollo?</h2>
             <div class="comparison-container">
                 <div class="comparison-card" data-aos="fade-right" data-aos-delay="200">
                     <h3>Apollo</h3>
@@ -523,8 +596,8 @@
         </section>
 
         <!-- New Outscraper Comparison Section -->
-        <section id="outscraper-comparison" class="comparison-section" aria-label="Outscraper Comparison">
-            <h2 data-aos="fade-up">Why Choose LeadMe Over Outscraper?</h2>
+        <section id="outscraper-comparison" class="comparison-section" aria-labelledby="outscraper-comparison-heading">
+            <h2 id="outscraper-comparison-heading" data-aos="fade-up">Why Choose LeadMe Over Outscraper?</h2>
             <div class="comparison-container">
                 <div class="comparison-card" data-aos="fade-right" data-aos-delay="200">
                     <h3>Outscraper</h3>
@@ -550,53 +623,53 @@
         </section>
 
         <!-- Pricing Section -->
-        <section id="pricing" class="pricing-section" aria-label="Pricing">
-            <h2 data-aos="fade-up">Our Pricing Plan</h2>
+        <section id="pricing" class="pricing-section" aria-labelledby="pricing-heading">
+            <h2 id="pricing-heading" data-aos="fade-up">Our Pricing Plan</h2>
             <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
                 <h3>Unlimited Leads Plan</h3>
-                <p>Get infinite leads every month with no extra fees. Scale your business effortlessly!</p>
+                <p>Get infinite leads every month with no extra fees. Scale your business effortlessly without breaking the bank!</p>
                 <div class="price">$200/month</div>
-                <button onclick="scrollToSection('#contact')">Request a Free Demo</button>
+                <button onclick="scrollToSection('#contact')" aria-label="Request a Free Demo">Request a Free Demo</button>
             </div>
         </section>
 
         <!-- Contact Us Section -->
-        <section id="contact" class="contact-section" aria-label="Contact Us">
-            <h2 data-aos="fade-up">Contact Us for a Free Demo</h2>
+        <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+            <h2 id="contact-heading" data-aos="fade-up">Contact Us for a Free Demo</h2>
             <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
                 <!-- Formspree Form Integration -->
                 <form action="https://formspree.io/f/mdknqvlk" method="POST" aria-label="Contact Form">
                     <label for="name">Your Name:</label>
                     <input type="text" name="name" id="name" required aria-required="true" placeholder="Enter your full name">
-
+    
                     <label for="email">Your Email:</label>
                     <input type="email" name="email" id="email" required aria-required="true" placeholder="Enter your email address">
-
+    
                     <label for="phone">Your Phone Number:</label>
                     <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="Enter your phone number (optional)">
-
+    
                     <label for="company">Your Company:</label>
                     <input type="text" name="company" id="company" placeholder="Enter your company name (optional)">
-
+    
                     <label for="message">Your Message:</label>
                     <textarea name="message" id="message" rows="5" required aria-required="true" placeholder="Enter your message"></textarea>
-
+    
                     <div class="checkbox-container">
                         <input type="checkbox" name="demo_request" id="demo_request" value="yes">
                         <label for="demo_request">I'd like to request a free demo</label>
                     </div>
-
+    
                     <!-- Google reCAPTCHA -->
                     <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
-
-                    <button type="submit">Send</button>
+    
+                    <button type="submit" aria-label="Send Message">Send</button>
                 </form>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo" data-aos="fade-in" data-aos-delay="200">
+    <footer class="footer" role="contentinfo" aria-label="Footer">
         <p>&copy; 2024 LeadMe. All rights reserved. <br> Contact us today for a <strong>completely free demo</strong>!</p>
         <div class="social-links" aria-label="Social Media Links">
             <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -622,17 +695,20 @@
 
         // Scroll to specific section
         function scrollToSection(section) {
-            document.querySelector(section).scrollIntoView({ behavior: 'smooth' });
+            const target = document.querySelector(section);
+            if(target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         }
 
-        // Optional: Highlight active navigation link on scroll
+        // Highlight active navigation link on scroll
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav ul li a');
 
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 80;
+                const sectionTop = section.offsetTop - 100;
                 if (pageYOffset >= sectionTop) {
                     current = section.getAttribute('id');
                 }
