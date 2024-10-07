@@ -127,6 +127,40 @@
             width: 100%;
         }
 
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 20px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #f0a500;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+        /* Responsive Navigation */
+        @media (max-width: 768px) {
+            .nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #121212;
+            }
+            .nav ul.active {
+                display: flex;
+            }
+            .nav ul li {
+                margin: 15px 0;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
         /* Introductory Section */
         .intro-section {
             height: 100vh;
@@ -530,11 +564,16 @@
     <!-- Navigation -->
     <header>
         <nav class="nav" role="navigation" aria-label="Main Navigation">
-            <ul>
+            <div class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu" tabindex="0">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="nav-menu">
                 <li><a href="#intro" aria-current="page">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#comparison">Why LeadMe?</a></li>
-                <li><a href="#outscraper-comparison">LeadMe vs Outscraper</a></li> <!-- New Navigation Link -->
+                <li><a href="#outscraper-comparison">LeadMe vs Outscraper</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -558,13 +597,13 @@
             <p data-aos="fade-up" data-aos-delay="200">At LeadMe, we specialize in providing unlimited leads for a flat monthly rate. Our mission is to simplify the lead generation process, making it more accessible and cost-effective for businesses of all sizes. We believe in transparent pricing, exceptional customer service, and delivering real results that help your business grow.</p>
         </section>
 
-        <!-- UI Showcase Section -->
+        <!-- UI Showcase Section (Replaced with Logo) -->
         <section id="ui-showcase" class="ui-showcase" aria-labelledby="ui-showcase-heading">
-            <h2 id="ui-showcase-heading" data-aos="fade-up">Our LeadMe Software</h2>
-            <p data-aos="fade-up" data-aos-delay="100">Experience top-tier lead generation tools without breaking the bank.</p>
-            <div class="ui-background" data-aos="zoom-in" data-aos-delay="200">
-                <img src="DALL·E 2024-10-06 20.37.40 - A modern logo for 'LeadMe', a lead generation software. The design includes the word 'LeadMe' in a sleek, modern font, integrated with a stylized funn.webp" alt="Screenshot of LeadMe User Interface" class="ui-image">
 
+            <div class="ui-background" data-aos="zoom-in" data-aos-delay="200">
+                <img src="DALL·E 2024-10-06 20.37.40 - A modern logo for 'LeadMe', a lead generation software. The design includes the word 'LeadMe' in a sleek, modern font, integrated with a stylized funn.webp" alt="LeadMe Logo" class="ui-image" loading="lazy">
+                <!-- Optional: Add a caption if desired -->
+                <!-- <p class="image-caption">Our modern and sleek LeadMe logo representing our commitment to excellence in lead generation.</p> -->
             </div>
         </section>
 
@@ -720,6 +759,23 @@
                     link.classList.add('active');
                 }
             });
+        });
+
+        // Toggle Navigation Menu on Hamburger Click
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('open');
+        });
+
+        // Allow Hamburger Toggle via Keyboard (Enter key)
+        hamburger.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('open');
+            }
         });
     </script>
 </body>
