@@ -199,7 +199,7 @@
             padding: 50px;
             background-color: #333;
             border-radius: 15px;
-            max-width: 1200px;
+            max-width: 800px; /* Reduced from 1200px to 800px */
             margin: 0 auto;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
@@ -207,6 +207,12 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
+            max-width: 600px; /* Set maximum width for the image */
+        }
+        .image-caption {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #ddd;
         }
 
         /* Comparison Section */
@@ -261,9 +267,6 @@
             margin-right: 10px;
             min-width: 20px;
         }
-
-        /* New Outscraper Comparison Section */
-        /* This section uses the same styles as the existing comparison section */
 
         /* Pricing Section */
         .pricing-section {
@@ -428,6 +431,7 @@
             }
             .ui-background {
                 padding: 20px;
+                max-width: 600px; /* Adjusted for smaller screens */
             }
             .comparison-container {
                 flex-direction: column;
@@ -441,6 +445,12 @@
             }
             .nav ul li {
                 margin: 10px 0;
+            }
+            .ui-background img {
+                max-width: 100%; /* Ensures image doesn't exceed container on small screens */
+            }
+            .image-caption {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -481,6 +491,7 @@
             <p data-aos="fade-up" data-aos-delay="100">If you want access, shoot us an email!</p>
             <div class="ui-background" data-aos="zoom-in" data-aos-delay="200">
                 <img src="Screenshot 2024-10-01 175403.png" alt="Screenshot of LeadMe User Interface" class="ui-image">
+                <p class="image-caption">Dashboard view showcasing LeadMe's powerful lead generation tools and analytics.</p> <!-- Added Caption -->
             </div>
         </section>
 
