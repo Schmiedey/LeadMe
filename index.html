@@ -663,15 +663,32 @@
 
         <!-- Pricing Section -->
         <section id="pricing" class="pricing-section" aria-labelledby="pricing-heading">
-            <h2 id="pricing-heading" data-aos="fade-up">Our Pricing Plan</h2>
-            <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
-                <h3>Unlimited Leads Plan</h3>
-                <p>Get infinite leads every month with no extra fees. Scale your business effortlessly without breaking the bank!</p>
-                <div class="price">$200/month</div>
-                <button onclick="scrollToSection('#contact')" aria-label="Request a Free Demo">Request a Free Demo</button>
+            <h2 id="pricing-heading" data-aos="fade-up">Our Pricing Plans</h2>
+            <div class="pricing-container">
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Free Plan</h3>
+                    <p>Perfect for small businesses or those just getting started with lead generation.</p>
+                    <div class="price">$0/month</div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> 100 leads daily limit</li>
+                        <li><i class="fas fa-check"></i> Basic lead generation tools</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                    </ul>
+                    <button onclick="scrollToSection('#contact')" aria-label="Sign Up for Free Plan">Sign Up Free</button>
+                </div>
+                <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Unlimited Leads Plan</h3>
+                    <p>Get infinite leads every month with no extra fees. Scale your business effortlessly!</p>
+                    <div class="price">$200/month</div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Unlimited leads</li>
+                        <li><i class="fas fa-check"></i> Advanced lead generation tools</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                    </ul>
+                    <button onclick="scrollToSection('#contact')" aria-label="Request a Free Demo">Request a Free Demo</button>
+                </div>
             </div>
         </section>
-
         <!-- Contact Us Section -->
         <section id="contact" class="contact-section" aria-labelledby="contact-heading">
             <h2 id="contact-heading" data-aos="fade-up">Contact Us for a Free Demo</h2>
@@ -729,6 +746,7 @@
                 <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=494350&theme=dark" alt="LeadMe - Unlimited&#0032;Leads&#0032;for&#0032;Your&#0032;Business | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
             </a>
         </div>
+        
     </footer>
     <!-- AOS Animation Library -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-6Oz4CA2ufqfjYxrHpjA5xBbCjN8T0j2PPF0kN/6GMc4tuW58kRI6kGJmmBWSfnkDr+HjC5n07ErNn+N4Psn5Ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
