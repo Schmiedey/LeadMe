@@ -7,22 +7,22 @@
     <title>Don't Break the Bank Paying for Leads, Choose LeadMe</title>
     
     <!-- Description and Keywords -->
-    <meta name="description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy without breaking the bank. Contact us today for more details!">
-    <meta name="keywords" content="LeadMe Software, Unlimited leads, Lead generation, Affordable lead generation, Business scaling, Lead generation software">
+    <meta name="description" content="LeadMe offers locally hosted unlimited leads with advanced tools to enhance your lead generation strategy without breaking the bank. Contact us today for more details!">
+    <meta name="keywords" content="LeadMe Software, Locally hosted leads, Unlimited leads, Lead generation, Affordable lead generation, Business scaling, Lead generation software">
     <meta name="author" content="LeadMe">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Don't Break the Bank Paying for Leads, Choose LeadMe">
-    <meta property="og:description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy without breaking the bank.">
-    <meta property="og:image" content="your-og-image.jpg">
+    <meta property="og:description" content="LeadMe offers locally hosted unlimited leads with advanced tools to enhance your lead generation strategy without breaking the bank.">
+    <meta property="og:image" content="path/to/your-og-image.jpg">
     <meta property="og:url" content="https://yourwebsite.com">
     <meta property="og:type" content="website">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Don't Break the Bank Paying for Leads, Choose LeadMe">
-    <meta name="twitter:description" content="LeadMe offers unlimited leads with advanced tools to enhance your lead generation strategy without breaking the bank.">
-    <meta name="twitter:image" content="your-twitter-image.jpg">
+    <meta name="twitter:description" content="LeadMe offers locally hosted unlimited leads with advanced tools to enhance your lead generation strategy without breaking the bank.">
+    <meta name="twitter:image" content="path/to/your-twitter-image.jpg">
     
     <!-- Canonical URL for SEO -->
     <link rel="canonical" href="https://yourwebsite.com" />
@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQd1M2czE+8lC/7hN0jtNjbz+Yqw8PA3z3aO2ghe+05t3ew3KZK4qtcRl3PjMK3RHjMduVzTnK3g4Cg6w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- AOS CSS (for scroll animations) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-pGk6IelUqTpDjyhCc4+Y70NsrPUqFjE6gASmMocJkZrLXJkhJHHjEuvmT57qHScHhLmD8V7h9GwjRvLk8FJ/0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-6Oz4CA2ufqfjYxrHpjA5xBbCjN8T0j2PPF0kN/6GMc4tuW58kRI6kGJmmBWSfnkDr+HjC5n07ErNn+N4Psn5Ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -80,7 +80,7 @@
         }
         /* Button Focus Outline for Accessibility */
         .cta-btn:focus,
-        .pricing-card button:focus,
+        .button-link:focus,
         .contact-form button:focus {
             outline: 2px dashed #ff9800;
             outline-offset: 4px;
@@ -164,7 +164,7 @@
         /* Introductory Section */
         .intro-section {
             height: 100vh;
-            background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('your-background-image.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('path/to/your-background-image.jpg') center/cover no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -256,7 +256,7 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
-            max-width: 800px; /* Increased from 700px to 800px */
+            max-width: 800px;
             transition: opacity 0.3s ease;
         }
         .ui-background img:hover {
@@ -333,12 +333,19 @@
             color: #f0a500;
             margin-bottom: 30px;
         }
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
         .pricing-card {
             background: #333;
             padding: 30px 20px;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-            width: 400px;
+            width: 350px;
             margin: 0 auto;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -360,7 +367,7 @@
             color: #f0a500;
             margin-bottom: 25px;
         }
-        .pricing-card button {
+        .pricing-card a.button-link {
             padding: 12px 35px;
             background-color: #f0a500;
             border: none;
@@ -372,11 +379,42 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             width: 100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
         }
-        .pricing-card button:hover,
-        .pricing-card button:focus {
+        .pricing-card a.button-link:hover,
+        .pricing-card a.button-link:focus {
             background-color: #ff9800;
             transform: translateY(-2px);
+        }
+
+        /* Disclaimer Style */
+        .disclaimer {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #ccc;
+            text-align: center;
+        }
+
+        /* Forum Section */
+        .forum-section {
+            padding: 80px 20px;
+            background: #1c1c1e;
+            color: #fff;
+            text-align: center;
+        }
+        .forum-section h2 {
+            font-size: 2.5rem;
+            color: #f0a500;
+            margin-bottom: 30px;
+        }
+        .forum-section p {
+            font-size: 1.1rem;
+            color: #ddd;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            line-height: 1.8;
         }
 
         /* Contact Section */
@@ -429,15 +467,6 @@
         .contact-form textarea:focus {
             background: #555;
             outline: none;
-        }
-        .checkbox-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .checkbox-container input {
-            width: auto;
-            margin-right: 10px;
         }
         .contact-form button {
             padding: 12px;
@@ -533,7 +562,8 @@
             .intro-section h1,
             .pricing-section h2,
             .contact-section h2,
-            .comparison-section h2 {
+            .comparison-section h2,
+            .forum-section h2 {
                 font-size: 2rem;
             }
         }
@@ -564,7 +594,7 @@
     <!-- Navigation -->
     <header>
         <nav class="nav" role="navigation" aria-label="Main Navigation">
-            <div class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu" tabindex="0">
+            <div class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu" aria-controls="nav-menu" aria-expanded="false" tabindex="0">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -575,6 +605,7 @@
                 <li><a href="#comparison">Why LeadMe?</a></li>
                 <li><a href="#outscraper-comparison">LeadMe vs Outscraper</a></li>
                 <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#forum">Forum</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -585,25 +616,22 @@
         <section id="intro" class="intro-section" aria-labelledby="intro-heading">
             <div class="intro-content" data-aos="fade-in">
                 <h1 id="intro-heading">Don't Break the Bank Paying for Leads, Choose LeadMe</h1>
-                <p>Transform your lead generation strategy with advanced tools to enhance efficiency without breaking the bank. Contact us today for a completely free demo!</p>
-                <button class="cta-btn" onclick="scrollToSection('#contact')" aria-label="Get a Free Demo">Get a Free Demo</button>
+                <p>Transform your lead generation strategy with locally hosted advanced tools to enhance efficiency without breaking the bank. Contact us today!</p>
+                <button class="cta-btn" onclick="scrollToSection('#contact')" aria-label="Contact Us">Contact Us</button>
             </div>
         </section>
 
         <!-- About Us Section -->
         <section id="about" class="about-section" aria-labelledby="about-heading">
             <h2 id="about-heading" data-aos="fade-up">About LeadMe</h2>
-            <p data-aos="fade-up" data-aos-delay="100">LeadMe is a cutting-edge lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly without breaking the bank.</p>
+            <p data-aos="fade-up" data-aos-delay="100">LeadMe is a cutting-edge, locally hosted lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly without breaking the bank.</p>
             <p data-aos="fade-up" data-aos-delay="200">At LeadMe, we specialize in providing unlimited leads for a flat monthly rate. Our mission is to simplify the lead generation process, making it more accessible and cost-effective for businesses of all sizes. We believe in transparent pricing, exceptional customer service, and delivering real results that help your business grow.</p>
         </section>
 
         <!-- UI Showcase Section (Replaced with Logo) -->
         <section id="ui-showcase" class="ui-showcase" aria-labelledby="ui-showcase-heading">
-
             <div class="ui-background" data-aos="zoom-in" data-aos-delay="200">
-                <img src="DALL·E 2024-10-06 20.37.40 - A modern logo for 'LeadMe', a lead generation software. The design includes the word 'LeadMe' in a sleek, modern font, integrated with a stylized funn.webp" alt="LeadMe Logo" class="ui-image" loading="lazy">
-                <!-- Optional: Add a caption if desired -->
-                <!-- <p class="image-caption">Our modern and sleek LeadMe logo representing our commitment to excellence in lead generation.</p> -->
+                <img src="path/to/your-logo-image.jpg" alt="LeadMe Logo" class="ui-image" loading="lazy">
             </div>
         </section>
 
@@ -628,13 +656,13 @@
                         <li><i class="fas fa-check" aria-hidden="true"></i> Unlimited leads</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> No extra fees</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> Simple and transparent pricing</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Scalable solutions for your business</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Locally hosted solution</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- New Outscraper Comparison Section -->
+        <!-- Outscraper Comparison Section -->
         <section id="outscraper-comparison" class="comparison-section" aria-labelledby="outscraper-comparison-heading">
             <h2 id="outscraper-comparison-heading" data-aos="fade-up">Why Choose LeadMe Over Outscraper?</h2>
             <div class="comparison-container">
@@ -655,7 +683,7 @@
                         <li><i class="fas fa-check" aria-hidden="true"></i> Unlimited export capacity</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> Affordable ongoing pricing</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> Scalable solutions for business growth</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> No hidden or additional fees</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Locally hosted for better performance</li>
                     </ul>
                 </div>
             </div>
@@ -665,6 +693,7 @@
         <section id="pricing" class="pricing-section" aria-labelledby="pricing-heading">
             <h2 id="pricing-heading" data-aos="fade-up">Our Pricing Plans</h2>
             <div class="pricing-container">
+                <!-- Free Plan Card -->
                 <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>Free Plan</h3>
                     <p>Perfect for small businesses or those just getting started with lead generation.</p>
@@ -674,8 +703,24 @@
                         <li><i class="fas fa-check"></i> Basic lead generation tools</li>
                         <li><i class="fas fa-check"></i> Email support</li>
                     </ul>
-                    <button onclick="scrollToSection('#contact')" aria-label="Sign Up for Free Plan">Sign Up Free</button>
+                    <!-- Download Button -->
+                    <a href="LeadMe-100.exe" class="button-link" aria-label="Download Free Version">Download Free Version</a>
+                    <!-- Disclaimer -->
+                    <p class="disclaimer">It will say unknown publisher, that's normal.</p>
                 </div>
+                <!-- 2,500 Leads Daily Plan Card -->
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>2,500 Leads Daily Plan</h3>
+                    <p>Ideal for growing businesses needing more leads per day.</p>
+                    <div class="price">$100/month</div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> 2,500 leads daily limit</li>
+                        <li><i class="fas fa-check"></i> Enhanced lead generation tools</li>
+                        <li><i class="fas fa-check"></i> Standard support</li>
+                    </ul>
+                    <a href="#" class="button-link" onclick="scrollToSection('#forum')" aria-label="Sign Up for 2,500 Leads Plan">Sign Up Now</a>
+                </div>
+                <!-- Unlimited Leads Plan Card -->
                 <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="400">
                     <h3>Unlimited Leads Plan</h3>
                     <p>Get infinite leads every month with no extra fees. Scale your business effortlessly!</p>
@@ -685,37 +730,53 @@
                         <li><i class="fas fa-check"></i> Advanced lead generation tools</li>
                         <li><i class="fas fa-check"></i> Priority support</li>
                     </ul>
-                    <button onclick="scrollToSection('#contact')" aria-label="Request a Free Demo">Request a Free Demo</button>
+                    <a href="#" class="button-link" onclick="scrollToSection('#forum')" aria-label="Sign Up for Unlimited Leads Plan">Sign Up Now</a>
                 </div>
             </div>
         </section>
+
+        <!-- Forum Section -->
+        <section id="forum" class="forum-section" aria-labelledby="forum-heading">
+            <h2 id="forum-heading" data-aos="fade-up">Join Our Forum</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Connect with other users, share insights, and get support from our community.</p>
+            <!-- Forum Link -->
+            <div class="forum-link" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://yourwebsite.com/forum" target="_blank" class="button-link" aria-label="Visit Our Forum">Visit Our Forum</a>
+            </div>
+        </section>
+
         <!-- Contact Us Section -->
         <section id="contact" class="contact-section" aria-labelledby="contact-heading">
-            <h2 id="contact-heading" data-aos="fade-up">Contact Us for a Free Demo</h2>
+            <h2 id="contact-heading" data-aos="fade-up">Contact Us</h2>
             <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
                 <!-- Formspree Form Integration -->
-                <form action="https://formspree.io/f/mdknqvlk" method="POST" aria-label="Contact Form">
-                    <label for="name">Your Name:</label>
-                    <input type="text" name="name" id="name" required aria-required="true" placeholder="Enter your first name">
-    
-                    <label for="email">Your Email:</label>
-                    <input type="email" name="email" id="email" required aria-required="true" placeholder="Enter your email address">
-    
-                    <label for="phone">Your Phone Number:</label>
-                    <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="Enter your phone number (optional)">
-    
-                    <label for="company">Your Company:</label>
-                    <input type="text" name="company" id="company" placeholder="Enter your company name (optional)">
-    
-                    <label for="message">Your Message:</label>
-                    <textarea name="message" id="message" rows="5" required aria-required="true" placeholder="Enter your message"></textarea>
-    
-                    <div class="checkbox-container">
-                        <input type="checkbox" name="demo_request" id="demo_request" value="yes">
-                        <label for="demo_request">I'd like to request a free demo</label>
+                <form action="https://formspree.io/f/xlderzoj" method="POST" aria-label="Contact Form">
+                    <!-- Honeypot Field (Bot Detection) -->
+                    <div style="display: none;" aria-hidden="true">
+                        <label for="honeypot">If you are a human, leave this field blank.</label>
+                        <input type="text" name="honeypot" id="honeypot" tabindex="-1" autocomplete="off">
                     </div>
 
-    
+                    <!-- Hidden Fields for Bot Detection -->
+                    <input type="hidden" name="js_enabled" id="js_enabled" value="0">
+                    <input type="hidden" name="form_start_time" id="form_start_time" value="">
+
+                    <!-- Rest of the form fields -->
+                    <label for="name">Your Name:</label>
+                    <input type="text" name="name" id="name" required aria-required="true" placeholder="Enter your first name">
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" name="email" id="email" required aria-required="true" placeholder="Enter your email address">
+
+                    <label for="phone">Your Phone Number:</label>
+                    <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="Enter your phone number (optional)">
+
+                    <label for="company">Your Company:</label>
+                    <input type="text" name="company" id="company" placeholder="Enter your company name (optional)">
+
+                    <label for="message">Your Message:</label>
+                    <textarea name="message" id="message" rows="5" required aria-required="true" placeholder="Enter your message"></textarea>
+
                     <button type="submit" aria-label="Send Message">Send</button>
                 </form>
             </div>
@@ -724,16 +785,7 @@
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo" aria-label="Footer">
-        <p>&copy; 2024 LeadMe. All rights reserved. <br> Contact us today for a <strong>completely free demo</strong>!</p>
-        <div class="social-links" aria-label="Social Media Links">
-            <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/yourpage" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://linkedin.com/company/yourpage" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://instagram.com/yourpage" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-    </footer>
-    <footer class="footer" role="contentinfo" aria-label="Footer"></footer>
-        <p>&copy; 2024 LeadMe. All rights reserved. <br> Contact us today for a <strong>completely free demo</strong>!</p>
+        <p>&copy; 2024 LeadMe. All rights reserved.</p>
         <div class="social-links" aria-label="Social Media Links">
             <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://twitter.com/yourpage" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -743,69 +795,97 @@
         <!-- Product Hunt Badge -->
         <div class="product-hunt-badge" style="margin-top: 20px;">
             <a href="https://www.producthunt.com/posts/leadme-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-leadme&#0045;2" target="_blank">
-                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=494350&theme=dark" alt="LeadMe - Unlimited&#0032;Leads&#0032;for&#0032;Your&#0032;Business | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
+                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=494350&theme=dark" alt="LeadMe - Unlimited Leads for Your Business | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
             </a>
         </div>
-        
     </footer>
-    <!-- AOS Animation Library -->
+
+    <!-- AOS Animation Library and JavaScript -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-6Oz4CA2ufqfjYxrHpjA5xBbCjN8T0j2PPF0kN/6GMc4tuW58kRI6kGJmmBWSfnkDr+HjC5n07ErNn+N4Psn5Ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Google reCAPTCHA Script -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
-        // Initialize AOS (Animate on Scroll)
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS (Animate on Scroll)
             AOS.init({
                 duration: 1000,
                 easing: 'ease-in-out',
                 once: true,
             });
-        });
 
-        // Scroll to specific section
-        function scrollToSection(section) {
-            const target = document.querySelector(section);
-            if(target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+            // Set js_enabled to '1'
+            var jsEnabledField = document.getElementById('js_enabled');
+            if(jsEnabledField) {
+                jsEnabledField.value = '1';
             }
-        }
 
-        // Highlight active navigation link on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav ul li a');
+            // Set form_start_time to current timestamp
+            var startTimeField = document.getElementById('form_start_time');
+            if(startTimeField) {
+                startTimeField.value = Date.now();
+            }
 
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
+            // Time-Based Check on Form Submission
+            var form = document.querySelector('.contact-form form');
+            form.addEventListener('submit', function(event) {
+                var currentTime = Date.now();
+                var startTime = parseInt(startTimeField.value);
+                var timeDiff = (currentTime - startTime) / 1000; // Convert to seconds
+
+                // Set a minimum time (e.g., 5 seconds)
+                if(timeDiff < 5) {
+                    alert('Form submitted too quickly. Please take your time.');
+                    event.preventDefault();
                 }
             });
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
+            // Scroll to specific section
+            window.scrollToSection = function(section) {
+                const target = document.querySelector(section);
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
+            };
+
+            // Highlight active navigation link on scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav ul li a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
             });
-        });
 
-        // Toggle Navigation Menu on Hamburger Click
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
+            // Toggle Navigation Menu on Hamburger Click
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('open');
-        });
-
-        // Allow Hamburger Toggle via Keyboard (Enter key)
-        hamburger.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
+            hamburger.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
                 hamburger.classList.toggle('open');
-            }
+                const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+                hamburger.setAttribute('aria-expanded', !expanded);
+            });
+
+            // Allow Hamburger Toggle via Keyboard (Enter key)
+            hamburger.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    navMenu.classList.toggle('active');
+                    hamburger.classList.toggle('open');
+                    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+                    hamburger.setAttribute('aria-expanded', !expanded);
+                }
+            });
         });
     </script>
 </body>
