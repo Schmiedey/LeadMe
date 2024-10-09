@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQd1M2czE+8lC/7hN0jtNjbz+Yqw8PA3z3aO2ghe+05t3ew3KZK4qtcRl3PjMK3RHjMduVzTnK3g4Cg6w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- AOS CSS (for scroll animations) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-6Oz4CA2ufqfjYxrHpjA5xBbCjN8T0j2PPF0kN/6GMc4tuW58kRI6kGJmmBWSfnkDr+HjC5n07ErNn+N4Psn5Ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-pGk6IelUqTpDjyhCc4+Y70NsrPUqFjE6gASmMocJkZrLXJkhJHHjEuvmT57qHScHhLmD8V7h9GwjRvLk8FJ/0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -196,6 +196,7 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             border: none;
+            text-decoration: none;
         }
         .cta-btn:hover,
         .cta-btn:focus {
@@ -397,26 +398,6 @@
             text-align: center;
         }
 
-        /* Forum Section */
-        .forum-section {
-            padding: 80px 20px;
-            background: #1c1c1e;
-            color: #fff;
-            text-align: center;
-        }
-        .forum-section h2 {
-            font-size: 2.5rem;
-            color: #f0a500;
-            margin-bottom: 30px;
-        }
-        .forum-section p {
-            font-size: 1.1rem;
-            color: #ddd;
-            max-width: 800px;
-            margin: 0 auto 20px auto;
-            line-height: 1.8;
-        }
-
         /* Contact Section */
         .contact-section {
             padding: 80px 20px;
@@ -562,8 +543,7 @@
             .intro-section h1,
             .pricing-section h2,
             .contact-section h2,
-            .comparison-section h2,
-            .forum-section h2 {
+            .comparison-section h2 {
                 font-size: 2rem;
             }
         }
@@ -605,7 +585,6 @@
                 <li><a href="#comparison">Why LeadMe?</a></li>
                 <li><a href="#outscraper-comparison">LeadMe vs Outscraper</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#forum">Forum</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -617,7 +596,8 @@
             <div class="intro-content" data-aos="fade-in">
                 <h1 id="intro-heading">Don't Break the Bank Paying for Leads, Choose LeadMe</h1>
                 <p>Transform your lead generation strategy with locally hosted advanced tools to enhance efficiency without breaking the bank. Contact us today!</p>
-                <button class="cta-btn" onclick="scrollToSection('#contact')" aria-label="Contact Us">Contact Us</button>
+                <!-- Moved the button back here -->
+                <a href="#contact" class="cta-btn" aria-label="Send us an enquiry">Send us an enquiry</a>
             </div>
         </section>
 
@@ -718,7 +698,7 @@
                         <li><i class="fas fa-check"></i> Enhanced lead generation tools</li>
                         <li><i class="fas fa-check"></i> Standard support</li>
                     </ul>
-                    <a href="#" class="button-link" onclick="scrollToSection('#forum')" aria-label="Sign Up for 2,500 Leads Plan">Sign Up Now</a>
+                    <a href="#contact" class="button-link" aria-label="Send us an enquiry">Send us an enquiry</a>
                 </div>
                 <!-- Unlimited Leads Plan Card -->
                 <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="400">
@@ -730,18 +710,8 @@
                         <li><i class="fas fa-check"></i> Advanced lead generation tools</li>
                         <li><i class="fas fa-check"></i> Priority support</li>
                     </ul>
-                    <a href="#" class="button-link" onclick="scrollToSection('#forum')" aria-label="Sign Up for Unlimited Leads Plan">Sign Up Now</a>
+                    <a href="#contact" class="button-link" aria-label="Send us an enquiry">Send us an enquiry</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Forum Section -->
-        <section id="forum" class="forum-section" aria-labelledby="forum-heading">
-            <h2 id="forum-heading" data-aos="fade-up">Join Our Forum</h2>
-            <p data-aos="fade-up" data-aos-delay="100">Connect with other users, share insights, and get support from our community.</p>
-            <!-- Forum Link -->
-            <div class="forum-link" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://yourwebsite.com/forum" target="_blank" class="button-link" aria-label="Visit Our Forum">Visit Our Forum</a>
             </div>
         </section>
 
@@ -750,7 +720,7 @@
             <h2 id="contact-heading" data-aos="fade-up">Contact Us</h2>
             <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
                 <!-- Formspree Form Integration -->
-                <form action="https://formspree.io/f/xlderzoj" method="POST" aria-label="Contact Form">
+                <form action="https://formspree.io/f/mdknqvlk" method="POST" aria-label="Contact Form">
                     <!-- Honeypot Field (Bot Detection) -->
                     <div style="display: none;" aria-hidden="true">
                         <label for="honeypot">If you are a human, leave this field blank.</label>
@@ -781,11 +751,15 @@
                 </form>
             </div>
         </section>
+
+        <!-- Removed the Enquiry Button from the footer -->
+
     </main>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo" aria-label="Footer">
+    <footer class="footer" id="footer" role="contentinfo" aria-label="Footer">
         <p>&copy; 2024 LeadMe. All rights reserved.</p>
+
         <div class="social-links" aria-label="Social Media Links">
             <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://twitter.com/yourpage" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -836,14 +810,6 @@
                     event.preventDefault();
                 }
             });
-
-            // Scroll to specific section
-            window.scrollToSection = function(section) {
-                const target = document.querySelector(section);
-                if(target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            };
 
             // Highlight active navigation link on scroll
             const sections = document.querySelectorAll('section');
