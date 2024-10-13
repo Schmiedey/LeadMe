@@ -4,24 +4,24 @@
     <!-- Meta Tags and Title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Don't Break the Bank Paying for Leads, Choose LeadMe</title>
+    <title>Don't Break the Bank Paying for B2B Leads, Choose LeadMe</title>
     
     <!-- Description and Keywords -->
-    <meta name="description" content="LeadMe offers locally hosted unlimited B2B leads with advanced tools to enhance your lead generation strategy without breaking the bank. Contact us today for more details!">
-    <meta name="keywords" content="LeadMe Software, Locally hosted leads, Unlimited leads, Lead generation, Affordable lead generation, Business scaling, Lead generation software">
+    <meta name="description" content="LeadMe offers locally hosted unlimited B2B leads with advanced tools to enhance your lead generation strategy without breaking the bank. Get detailed business information and customize your leads to fit your needs. Contact us today for more details!">
+    <meta name="keywords" content="LeadMe Software, B2B lead generation, Locally hosted leads, Unlimited leads, Business emails, Phone numbers, Business names, Location data, Social links, Customized lead generation, Affordable B2B leads">
     <meta name="author" content="LeadMe">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Don't Break the Bank Paying for Leads, Choose LeadMe">
-    <meta property="og:description" content="LeadMe offers locally hosted unlimited B2B leads with advanced tools to enhance your lead generation strategy without breaking the bank.">
+    <meta property="og:title" content="Don't Break the Bank Paying for B2B Leads, Choose LeadMe">
+    <meta property="og:description" content="LeadMe offers locally hosted unlimited B2B leads with advanced tools to enhance your lead generation strategy. Get detailed business information tailored to your needs without breaking the bank.">
     <meta property="og:image" content="path/to/your-og-image.jpg">
     <meta property="og:url" content="https://yourwebsite.com">
     <meta property="og:type" content="website">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Don't Break the Bank Paying for Leads, Choose LeadMe">
-    <meta name="twitter:description" content="LeadMe offers locally hosted unlimited leads with advanced tools to enhance your lead generation strategy without breaking the bank.">
+    <meta name="twitter:title" content="Don't Break the Bank Paying for B2B Leads, Choose LeadMe">
+    <meta name="twitter:description" content="LeadMe offers locally hosted unlimited B2B leads with advanced tools to enhance your lead generation strategy. Obtain detailed business information and customize your leads without breaking the bank.">
     <meta name="twitter:image" content="path/to/your-twitter-image.jpg">
     
     <!-- Canonical URL for SEO -->
@@ -222,6 +222,48 @@
             max-width: 800px;
             margin: 0 auto 20px auto;
             line-height: 1.8;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 20px;
+            background: #1c1c1e;
+            color: #fff;
+            text-align: center;
+        }
+        .features-section h2 {
+            font-size: 2.5rem;
+            color: #f0a500;
+            margin-bottom: 30px;
+        }
+        .features-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .feature-card {
+            background: #282828;
+            padding: 30px 20px;
+            border-radius: 15px;
+            width: 300px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+        }
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: #f0a500;
+            margin-bottom: 15px;
+        }
+        .feature-card p {
+            font-size: 1rem;
+            color: #ddd;
+            line-height: 1.6;
         }
 
         /* UI Showcase Section */
@@ -544,12 +586,20 @@
             .comparison-card {
                 width: 90%;
             }
-            .ui-showcase h2,
+            .features-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature-card {
+                width: 90%;
+            }
+            .features-section h2,
             .about-section h2,
             .intro-section h1,
             .pricing-section h2,
             .contact-section h2,
-            .comparison-section h2 {
+            .comparison-section h2,
+            .features-section h2 {
                 font-size: 2rem;
             }
         }
@@ -573,6 +623,9 @@
             .comparison-card {
                 width: 100%;
             }
+            .feature-card {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -588,6 +641,7 @@
             <ul id="nav-menu">
                 <li><a href="#intro" aria-current="page">Home</a></li>
                 <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Features</a></li>
                 <li><a href="#comparison">Why LeadMe?</a></li>
                 <li><a href="#outscraper-comparison">LeadMe vs Outscraper</a></li>
                 <li><a href="#pricing">Pricing</a></li>
@@ -600,8 +654,8 @@
         <!-- Introductory Section -->
         <section id="intro" class="intro-section" aria-labelledby="intro-heading">
             <div class="intro-content" data-aos="fade-in">
-                <h1 id="intro-heading">Don't Break the Bank Paying for Leads, Choose LeadMe</h1>
-                <p>Transform your lead generation strategy with locally hosted advanced tools to enhance efficiency without breaking the bank. Contact us today!</p>
+                <h1 id="intro-heading">Don't Break the Bank Paying for B2B Leads, Choose LeadMe</h1>
+                <p>Transform your B2B lead generation strategy with locally hosted advanced tools to enhance efficiency. Obtain detailed business information tailored to your needs without breaking the bank. Contact us today!</p>
                 <!-- Enquiry Button -->
                 <a href="#contact" class="cta-btn" aria-label="Send us an enquiry">Send us an enquiry</a>
             </div>
@@ -610,8 +664,39 @@
         <!-- About Us Section -->
         <section id="about" class="about-section" aria-labelledby="about-heading">
             <h2 id="about-heading" data-aos="fade-up">About LeadMe</h2>
-            <p data-aos="fade-up" data-aos-delay="100">LeadMe is a cutting-edge, locally hosted lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly without breaking the bank.</p>
-            <p data-aos="fade-up" data-aos-delay="200">At LeadMe, we specialize in providing unlimited leads for a flat monthly rate. Our mission is to simplify the lead generation process, making it more accessible and cost-effective for businesses of all sizes. We believe in transparent pricing, exceptional customer service, and delivering real results that help your business grow.</p>
+            <p data-aos="fade-up" data-aos-delay="100">LeadMe is a cutting-edge, locally hosted B2B lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly without breaking the bank.</p>
+            <p data-aos="fade-up" data-aos-delay="200">At LeadMe, we specialize in providing unlimited B2B leads for a flat monthly rate. Our mission is to simplify the lead generation process, making it more accessible and cost-effective for businesses of all sizes. We believe in transparent pricing, exceptional customer service, and delivering real results that help your business grow.</p>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section" aria-labelledby="features-heading">
+            <h2 id="features-heading" data-aos="fade-up">Our B2B Lead Generation Features</h2>
+            <div class="features-container">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Comprehensive Data Collection</h3>
+                    <p>Access detailed information including business emails, personal emails, phone numbers, business names, locations, and social media links to ensure you have all the necessary data to connect with potential clients.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Unlimited B2B Leads</h3>
+                    <p>Generate an unlimited number of high-quality B2B leads each month with our flat-rate pricing, eliminating the worry of overage fees or hidden costs.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Customization to Your Needs</h3>
+                    <p>Customize your lead generation parameters to target specific industries, regions, or business sizes, ensuring the leads you receive are perfectly aligned with your business goals.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Locally Hosted Solution</h3>
+                    <p>Enjoy faster data processing and enhanced security with our locally hosted platform, giving you complete control over your lead data.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <h3>Advanced Lead Generation Tools</h3>
+                    <p>Utilize our suite of advanced tools to analyze, segment, and manage your leads effectively, ensuring higher conversion rates and better ROI.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <h3>Seamless Integration</h3>
+                    <p>Easily integrate LeadMe with your existing CRM and marketing tools to streamline your workflows and maximize efficiency.</p>
+                </div>
+            </div>
         </section>
 
         <!-- UI Showcase Section (Replaced with Logo) -->
@@ -639,7 +724,7 @@
                     <h3>LeadMe</h3>
                     <ul>
                         <li><i class="fas fa-check" aria-hidden="true"></i> $200/month flat rate</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Unlimited leads</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Unlimited B2B leads</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> No extra fees</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> Simple and transparent pricing</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> Locally hosted solution</li>
@@ -682,10 +767,10 @@
                 <!-- Free Plan Card -->
                 <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>Free Plan</h3>
-                    <p>Perfect for small businesses or those just getting started with lead generation.</p>
+                    <p>Perfect for small businesses or those just getting started with B2B lead generation.</p>
                     <div class="price">$0/month</div>
                     <ul class="features-list">
-                        <li><i class="fas fa-check"></i> 100 leads daily limit</li>
+                        <li><i class="fas fa-check"></i> 100 B2B leads daily limit</li>
                         <li><i class="fas fa-check"></i> Basic lead generation tools</li>
                         <li><i class="fas fa-check"></i> Email support</li>
                     </ul>
@@ -697,10 +782,10 @@
                 <!-- 2,500 Leads Daily Plan Card -->
                 <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
                     <h3>2,500 Leads Daily Plan</h3>
-                    <p>Ideal for growing businesses needing more leads per day.</p>
+                    <p>Ideal for growing businesses needing more B2B leads per day.</p>
                     <div class="price">$100/month</div>
                     <ul class="features-list">
-                        <li><i class="fas fa-check"></i> 2,500 leads daily limit</li>
+                        <li><i class="fas fa-check"></i> 2,500 B2B leads daily limit</li>
                         <li><i class="fas fa-check"></i> Enhanced lead generation tools</li>
                         <li><i class="fas fa-check"></i> Standard support</li>
                     </ul>
@@ -709,10 +794,10 @@
                 <!-- Unlimited Leads Plan Card -->
                 <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="400">
                     <h3>Unlimited Leads Plan</h3>
-                    <p>Get infinite leads every month with no extra fees. Scale your business effortlessly!</p>
+                    <p>Get infinite B2B leads every month with no extra fees. Scale your business effortlessly!</p>
                     <div class="price">$200/month</div>
                     <ul class="features-list">
-                        <li><i class="fas fa-check"></i> Unlimited leads</li>
+                        <li><i class="fas fa-check"></i> Unlimited B2B leads</li>
                         <li><i class="fas fa-check"></i> Advanced lead generation tools</li>
                         <li><i class="fas fa-check"></i> Priority support</li>
                     </ul>
@@ -761,9 +846,6 @@
             <div class="calendly-inline-widget" data-url="https://calendly.com/wesley-schmiedeskamp/30min" style="min-width:320px; height:700px; margin-top: 40px;" data-aos="fade-up" data-aos-delay="300"></div>
             <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
         </section>
-
-        <!-- Removed the Enquiry Button from the footer -->
-
     </main>
 
     <!-- Footer -->
@@ -779,7 +861,7 @@
         <!-- Product Hunt Badge -->
         <div class="product-hunt-badge" style="margin-top: 20px;">
             <a href="https://www.producthunt.com/posts/leadme-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-leadme&#0045;2" target="_blank">
-                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=494350&theme=dark" alt="LeadMe - Unlimited Leads for Your Business | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
+                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=494350&theme=dark" alt="LeadMe - Unlimited B2B Leads for Your Business | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
             </a>
         </div>
     </footer>
