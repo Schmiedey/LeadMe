@@ -74,7 +74,7 @@
             list-style: none;
         }
         img {
-            max-width: 100%;
+            max-width: %;
             height: auto;
             display: block;
         }
@@ -93,7 +93,7 @@
             text-align: center;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .nav ul {
@@ -124,7 +124,7 @@
         }
         .nav ul li a:hover::after,
         .nav ul li a:focus::after {
-            width: 100%;
+            width: %;
         }
 
         /* Hamburger Menu Styles */
@@ -147,7 +147,7 @@
             .nav ul {
                 display: none;
                 flex-direction: column;
-                width: 100%;
+                width: %;
                 background-color: #121212;
             }
             .nav ul.active {
@@ -163,7 +163,7 @@
 
         /* Introductory Section */
         .intro-section {
-            height: 100vh;
+            height: vh;
             background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('path/to/your-background-image.jpg') center/cover no-repeat;
             display: flex;
             justify-content: center;
@@ -296,7 +296,7 @@
             transform: scale(1.02);
         }
         .ui-background img {
-            width: 100%;
+            width: %;
             height: auto;
             border-radius: 10px;
             max-width: 800px;
@@ -421,7 +421,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            width: 100%;
+            width: %;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -472,7 +472,7 @@
         }
         .contact-form input, 
         .contact-form textarea {
-            width: 100%;
+            width: %;
             padding: 12px 15px;
             margin: 10px 0 20px 0;
             background: #444;
@@ -501,7 +501,7 @@
             border-radius: 10px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            width: 100%;
+            width: %;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
         .contact-form button:hover,
@@ -621,10 +621,10 @@
                 width: 90%;
             }
             .comparison-card {
-                width: 100%;
+                width: %;
             }
             .feature-card {
-                width: 100%;
+                width: %;
             }
         }
     </style>
@@ -664,7 +664,7 @@
         <!-- About Us Section -->
         <section id="about" class="about-section" aria-labelledby="about-heading">
             <h2 id="about-heading" data-aos="fade-up">About LeadMe</h2>
-            <p data-aos="fade-up" data-aos-delay="100">LeadMe is a cutting-edge, locally hosted B2B lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly without breaking the bank.</p>
+            <p data-aos="fade-up" data-aos-delay="">LeadMe is a cutting-edge, locally hosted B2B lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly without breaking the bank.</p>
             <p data-aos="fade-up" data-aos-delay="200">At LeadMe, we specialize in providing unlimited B2B leads for a flat monthly rate. Our mission is to simplify the lead generation process, making it more accessible and cost-effective for businesses of all sizes. We believe in transparent pricing, exceptional customer service, and delivering real results that help your business grow.</p>
         </section>
 
@@ -672,7 +672,7 @@
         <section id="features" class="features-section" aria-labelledby="features-heading">
             <h2 id="features-heading" data-aos="fade-up">Our B2B Lead Generation Features</h2>
             <div class="features-container">
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="">
                     <h3>Comprehensive Data Collection</h3>
                     <p>Access detailed information including business emails, personal emails, phone numbers, business names, locations, and social media links to ensure you have all the necessary data to connect with potential clients.</p>
                 </div>
@@ -770,12 +770,12 @@
                     <p>Perfect for small businesses or those just getting started with B2B lead generation.</p>
                     <div class="price">$0/month</div>
                     <ul class="features-list">
-                        <li><i class="fas fa-check"></i> 100 B2B leads daily limit</li>
+                        <li><i class="fas fa-check"></i>  B2B leads daily limit</li>
                         <li><i class="fas fa-check"></i> Basic lead generation tools</li>
                         <li><i class="fas fa-check"></i> Email support</li>
                     </ul>
                     <!-- Download Button -->
-                    <a href="LeadMe-100.exe" class="button-link" aria-label="Download Free Version">Download Free Version</a>
+                    <a href="LeadMe-10000.exe" class="button-link" aria-label="Download Free Version">Download Free Version</a>
                     <!-- Disclaimer -->
                     <p class="disclaimer">It will say unknown publisher, that's normal.</p>
                 </div>
@@ -783,7 +783,7 @@
                 <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
                     <h3>2,500 Leads Daily Plan</h3>
                     <p>Ideal for growing businesses needing more B2B leads per day.</p>
-                    <div class="price">$100/month</div>
+                    <div class="price">$/month</div>
                     <ul class="features-list">
                         <li><i class="fas fa-check"></i> 2,500 B2B leads daily limit</li>
                         <li><i class="fas fa-check"></i> Enhanced lead generation tools</li>
@@ -872,7 +872,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize AOS (Animate on Scroll)
             AOS.init({
-                duration: 1000,
+                duration: 0,
                 easing: 'ease-in-out',
                 once: true,
             });
@@ -894,7 +894,7 @@
             form.addEventListener('submit', function(event) {
                 var currentTime = Date.now();
                 var startTime = parseInt(startTimeField.value);
-                var timeDiff = (currentTime - startTime) / 1000; // Convert to seconds
+                var timeDiff = (currentTime - startTime) / 0; // Convert to seconds
 
                 // Set a minimum time (e.g., 5 seconds)
                 if(timeDiff < 5) {
@@ -910,7 +910,7 @@
             window.addEventListener('scroll', () => {
                 let current = '';
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 100;
+                    const sectionTop = section.offsetTop - ;
                     if (pageYOffset >= sectionTop) {
                         current = section.getAttribute('id');
                     }
