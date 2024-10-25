@@ -74,7 +74,7 @@
             list-style: none;
         }
         img {
-            max-width: %;
+            max-width: 100%;
             height: auto;
             display: block;
         }
@@ -93,7 +93,7 @@
             text-align: center;
             position: sticky;
             top: 0;
-            z-index: 0;
+            z-index: 1000;
             box-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .nav ul {
@@ -123,8 +123,9 @@
             left: 0;
         }
         .nav ul li a:hover::after,
-        .nav ul li a:focus::after {
-            width: %;
+        .nav ul li a:focus::after,
+        .nav ul li a.active::after {
+            width: 100%;
         }
 
         /* Hamburger Menu Styles */
@@ -147,7 +148,7 @@
             .nav ul {
                 display: none;
                 flex-direction: column;
-                width: %;
+                width: 100%;
                 background-color: #121212;
             }
             .nav ul.active {
@@ -163,7 +164,7 @@
 
         /* Introductory Section */
         .intro-section {
-            height: vh;
+            min-height: 100vh;
             background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('path/to/your-background-image.jpg') center/cover no-repeat;
             display: flex;
             justify-content: center;
@@ -197,6 +198,7 @@
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             border: none;
             text-decoration: none;
+            display: inline-block;
         }
         .cta-btn:hover,
         .cta-btn:focus {
@@ -273,16 +275,6 @@
             color: #fff;
             text-align: center;
         }
-        .ui-showcase h2 {
-            font-size: 2.5rem;
-            color: #f0a500;
-            margin-bottom: 20px;
-        }
-        .ui-showcase p {
-            font-size: 1.1rem;
-            color: #ddd;
-            margin-bottom: 30px;
-        }
         .ui-background {
             padding: 30px;
             background-color: #333;
@@ -296,7 +288,7 @@
             transform: scale(1.02);
         }
         .ui-background img {
-            width: %;
+            width: 100%;
             height: auto;
             border-radius: 10px;
             max-width: 800px;
@@ -304,11 +296,6 @@
         }
         .ui-background img:hover {
             opacity: 0.9;
-        }
-        .image-caption {
-            margin-top: 10px;
-            font-size: 0.95rem;
-            color: #ddd;
         }
 
         /* Comparison Section */
@@ -410,6 +397,23 @@
             color: #f0a500;
             margin-bottom: 25px;
         }
+        .pricing-card .features-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+        .pricing-card .features-list li {
+            font-size: 1rem;
+            color: #ddd;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .pricing-card .features-list li i {
+            color: #f0a500;
+            margin-right: 8px;
+            min-width: 20px;
+        }
         .pricing-card a.button-link {
             padding: 12px 35px;
             background-color: #f0a500;
@@ -421,7 +425,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            width: %;
+            width: 100%;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -472,7 +476,7 @@
         }
         .contact-form input, 
         .contact-form textarea {
-            width: %;
+            width: 100%;
             padding: 12px 15px;
             margin: 10px 0 20px 0;
             background: #444;
@@ -501,7 +505,7 @@
             border-radius: 10px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            width: %;
+            width: 100%;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
         .contact-form button:hover,
@@ -544,7 +548,7 @@
                 gap: 20px;
             }
             .pricing-card {
-                width: 350px;
+                width: 300px;
             }
         }
         @media (max-width: 992px) {
@@ -598,8 +602,7 @@
             .intro-section h1,
             .pricing-section h2,
             .contact-section h2,
-            .comparison-section h2,
-            .features-section h2 {
+            .comparison-section h2 {
                 font-size: 2rem;
             }
         }
@@ -621,10 +624,10 @@
                 width: 90%;
             }
             .comparison-card {
-                width: %;
+                width: 100%;
             }
             .feature-card {
-                width: %;
+                width: 100%;
             }
         }
     </style>
@@ -664,7 +667,7 @@
         <!-- About Us Section -->
         <section id="about" class="about-section" aria-labelledby="about-heading">
             <h2 id="about-heading" data-aos="fade-up">About LeadMe</h2>
-            <p data-aos="fade-up" data-aos-delay="">LeadMe is a cutting-edge, locally hosted B2B lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly without breaking the bank.</p>
+            <p data-aos="fade-up">LeadMe is a cutting-edge, locally hosted B2B lead generation platform designed to transform the way businesses acquire new leads. Our advanced tools and technologies empower companies to enhance their lead generation strategies, improve efficiency, and scale their businesses effortlessly without breaking the bank.</p>
             <p data-aos="fade-up" data-aos-delay="200">At LeadMe, we specialize in providing unlimited B2B leads for a flat monthly rate. Our mission is to simplify the lead generation process, making it more accessible and cost-effective for businesses of all sizes. We believe in transparent pricing, exceptional customer service, and delivering real results that help your business grow.</p>
         </section>
 
@@ -672,7 +675,7 @@
         <section id="features" class="features-section" aria-labelledby="features-heading">
             <h2 id="features-heading" data-aos="fade-up">Our B2B Lead Generation Features</h2>
             <div class="features-container">
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="">
+                <div class="feature-card" data-aos="fade-up">
                     <h3>Comprehensive Data Collection</h3>
                     <p>Access detailed information including business emails, personal emails, phone numbers, business names, locations, and social media links to ensure you have all the necessary data to connect with potential clients.</p>
                 </div>
@@ -770,7 +773,7 @@
                     <p>Perfect for small businesses or those just getting started with B2B lead generation.</p>
                     <div class="price">$0/month</div>
                     <ul class="features-list">
-                        <li><i class="fas fa-check"></i>  B2B leads daily limit</li>
+                        <li><i class="fas fa-check"></i> 10,000 B2B leads daily limit</li>
                         <li><i class="fas fa-check"></i> Basic lead generation tools</li>
                         <li><i class="fas fa-check"></i> Email support</li>
                     </ul>
@@ -783,7 +786,7 @@
                 <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
                     <h3>2,500 Leads Daily Plan</h3>
                     <p>Ideal for growing businesses needing more B2B leads per day.</p>
-                    <div class="price">$/month</div>
+                    <div class="price">$50/month</div>
                     <ul class="features-list">
                         <li><i class="fas fa-check"></i> 2,500 B2B leads daily limit</li>
                         <li><i class="fas fa-check"></i> Enhanced lead generation tools</li>
@@ -861,7 +864,7 @@
         <!-- Product Hunt Badge -->
         <div class="product-hunt-badge" style="margin-top: 20px;">
             <a href="https://www.producthunt.com/posts/leadme-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-leadme&#0045;2" target="_blank">
-                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=494350&theme=dark" alt="LeadMe - Unlimited B2B Leads for Your Business | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
+                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=494350&theme=dark" alt="LeadMe - Unlimited B2B Leads for Your Business | Product Hunt" width="250" height="54" />
             </a>
         </div>
     </footer>
@@ -872,7 +875,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize AOS (Animate on Scroll)
             AOS.init({
-                duration: 0,
+                duration: 800,
                 easing: 'ease-in-out',
                 once: true,
             });
@@ -894,7 +897,7 @@
             form.addEventListener('submit', function(event) {
                 var currentTime = Date.now();
                 var startTime = parseInt(startTimeField.value);
-                var timeDiff = (currentTime - startTime) / 0; // Convert to seconds
+                var timeDiff = (currentTime - startTime) / 1000; // Convert to seconds
 
                 // Set a minimum time (e.g., 5 seconds)
                 if(timeDiff < 5) {
@@ -904,14 +907,14 @@
             });
 
             // Highlight active navigation link on scroll
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav ul li a');
 
             window.addEventListener('scroll', () => {
                 let current = '';
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop - ;
-                    if (pageYOffset >= sectionTop) {
+                    const sectionTop = section.offsetTop - 80;
+                    if (window.pageYOffset >= sectionTop) {
                         current = section.getAttribute('id');
                     }
                 });
@@ -937,7 +940,8 @@
 
             // Allow Hamburger Toggle via Keyboard (Enter key)
             hamburger.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
                     navMenu.classList.toggle('active');
                     hamburger.classList.toggle('open');
                     const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
